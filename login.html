@@ -1,0 +1,16 @@
+<div class="loginBackground">
+    <div class="loginWrapper">
+        <div ng-show="!user">
+            <div class></div>
+            <h2>Login/Signup</h2>
+            <p>Please sign in with your google account.</p>
+            <button ng-click="login(adminLogin)">Sign in with Google</button>
+        </div>
+        <div ng-show="user">
+            <h2>You are logged in!</h2>
+            <p>You are currently logged in as {{user.displayName}}</p>
+            <p>If this is not your account, please log out.</p>
+            <button ng-click="logout()">LOGOUT</button>
+        </div>
+    </div>
+</div>

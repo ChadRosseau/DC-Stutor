@@ -1,0 +1,76 @@
+<div class="profileWrapper">
+    <div class="profileBackdrop">
+        <div class="createProfilePrompt" id="createProfilePrompt">
+            <h3>You need to complete your profile before you can access this page.</h3>
+            <h3>Complete now?</h3>
+            <button ng-click="createProfileFormSwitch()">BEGIN</button>
+        </div>
+        <div class="profileForm" id="profileForm">
+            <div class="profileBasicsInput">
+                <h4>Basic info</h4>
+                <label>
+                    Full name:
+                    <br>
+                    <input type="text" name="">
+                </label>
+                <label>
+                    Description:
+                    <br>
+                    <textarea placeholder="I am in year _. I love __, __and __. Happy to help out with any of these subjects."></textarea>
+                </label>
+                <label>
+                    Birthday:
+                    <br>
+                    <input type="date" name="">
+                </label>
+            </div>
+            <div class="requirementNotice">
+                <h5>PLEASE NOTE ALL <br> FIELDS ARE REQUIRED</h5>
+                <button>SUBMIT</button>
+                <h6>Error: Not all fields completed</h6>
+            </div>
+            <div class="profileSubjectsInput">
+                <h4>Best Subjects:</h4>
+                <div class="subjectsColumnContainer">
+                    <div class="subjectsColumn">
+                        <label><input type="checkbox" name=""> Math</label>
+                        <label><input type="checkbox" name=""> English</label>
+                        <label><input type="checkbox" name=""> Chinese</label>
+                        <label><input type="checkbox" name=""> Art</label>
+                        <label><input type="checkbox" name=""> Music</label>
+                        <label><input type="checkbox" name=""> PHE</label>
+                    </div>
+                    <div class="subjectsColumn">
+                        <label><input type="checkbox" name=""> Science</label>
+                        <label><input type="checkbox" name=""> I & S</label>
+                        <label><input type="checkbox" name=""> Spanish</label>
+                        <label><input type="checkbox" name=""> Drama</label>
+                        <label><input type="checkbox" name=""> Design</label>
+                        <label><input type="checkbox" name=""> CE</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile">
+            <div class=profileImage style="background-image: url({{user.photoURL}});"></div>
+            <div class="profileInfo">
+                <div class="profileBasics">
+                    <label>
+                        <h4>Full name:</h4>
+                        <input type="text" name="" value="{{user.name}}">
+                    </label>
+                    <label>
+                        <h4>Description:</h4>
+                        <textarea value="{{user.description}}"></textarea>
+                    </label>
+                    <label>
+                        <h4>Birthday:</h4>
+                        <input type="date" name="">
+                    </label>
+                </div>
+                <div class="profileSubjects">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

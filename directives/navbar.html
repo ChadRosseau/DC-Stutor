@@ -1,0 +1,38 @@
+<!-- Navbar -->
+    <nav>
+        <div class="navBar">
+            <!-- Logo -->
+
+            <!-- Links -->
+            <div class="navWrapper navLinkWrapper">
+                <div class="navLogoWrapper">
+                    <div class="logoImage"></div>
+                    <h2>STUTOR</h2>
+                </div>
+       
+                <a href="#/home">
+                    <div class="navLink">Home</div>
+                </a>
+                <a href="#/profile">
+                    <div class="navLink">Dashboard</div>
+                </a>
+                <a href="#/tickets">
+                    <div class="navLink">Tickets</div>
+                </a>
+                <a href="#/about">
+                    <div class="navLink">About</div>
+                </a>
+                <a href="#/contact">
+                    <div class="navLink">Contact</div>
+                </a>
+            </div>
+            <a href="#/login" ng-show="!user">
+                <div class="loginButton">LOGIN</div>
+            </a>
+            <button class="loginButton" ng-show="user" ng-click="logout()">LOGOUT</button>
+        </div>
+    </nav>
+    <div class="navyBar" ng-show="user">
+        Welcome<span>, {{user.displayName}}</span>!
+        <div class="displayImage" style="background-image: url({{user.photoURL}});"></div>
+    </div>   
