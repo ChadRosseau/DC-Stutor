@@ -330,10 +330,6 @@ a:hover {
     font-size: 14px;
 }
 
-.profileSubjectsInput {
-
-}
-
 
 .subjectsColumnContainer {
     display: flex;
@@ -390,10 +386,6 @@ a:hover {
     padding: 20px;
     margin: 0 5px;
     min-width: 300px;
-}
-
-.tickets {
-
 }
 
 .tickets .innerBox {
@@ -494,9 +486,9 @@ a:hover {
     background-image: url("https://cdn.asiatatler.com/asiatatler/hk/i/2018/06/20183952-Online_DiscoveryCollege1_resized_2000x1320.jpg");
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     height: 500px;
-    background-attachment: fixed;
 }
 
 .cardWrapper {
@@ -579,8 +571,10 @@ a:hover {
 
 /* Login */
 .loginBackground {
-    background: rgb(49, 51, 255);
-    background: linear-gradient(0deg, rgba(49, 51, 255, 1) 0%, rgba(12, 208, 222, 1) 97%);
+    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -607,23 +601,88 @@ a:hover {
 }
 
 /* Tickets Page */
-.ticketColumnWrapper {
-    background: rgb(49, 51, 255);
-    background: linear-gradient(0deg, rgba(49, 51, 255, 1) 0%, rgba(12, 208, 222, 1) 97%);
+.ticketBulletin {
+    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.ticketBulletin h1 {
+    text-align: center;
+    color: #FFF;
+    padding: 20px;
+    font-size: 60px;
+    font-weight: bolder;
+    -webkit-text-fill-color: rgba(255,255,255,0.3);
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: white;
+}
+
+.ticketFilter {
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    padding: 5px;
+    margin: 10px auto;
+    width: fit-content;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    border-radius: 10px;
+    border: 2px solid #FFF;
+}
+
+.ticketFilter p {
+    color: #fff;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    font-size: 12px;
+    border: 1px solid #FFF;
+}
+
+.ticketFilter p.active {
+    background-color: #FFF;
+    color: navy;
+}
+
+.ticketFilter p:hover {
+    background-color: navy;
+    color: #FFF;
+}
+
+.ticketColumnWrapper {
+    display: flex;
     justify-content: space-around;
+    padding-bottom: 100px;
 }
 
 .ticketColumn {
     margin: 20px;
     border: 2px solid navy;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
     padding: 10px;
     border-radius: 10px;
+    background-color: #FFF;
+    height: 100%
+}
+
+.ticketColumn h2 {
+    text-align: center;
+    color: navy;
+    padding: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Arial";
 }
 
 .ticket {
