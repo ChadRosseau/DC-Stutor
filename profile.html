@@ -5,7 +5,7 @@
             <h3>Complete now?</h3>
             <button ng-click="createProfileFormSwitch()">BEGIN</button>
         </div>
-        <div class="profileForm container-fluid" id="profileForm">
+        <div class="profileForm container-fluid" id="profileForm" ng-show="user && !profile.fullName">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="profileBasicsInput box">
