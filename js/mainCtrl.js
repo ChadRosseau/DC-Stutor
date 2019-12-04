@@ -75,7 +75,8 @@
                  takenEmail: false,
                  takenImage: false,
                  image: user.photoURL,
-                 ticketKey: newKey
+                 ticketKey: newKey,
+                 completed:false
              });
 
          }
@@ -100,7 +101,8 @@
                  takenImage: user.photoURL,
                  takenUid: user.uid,
                  image: ticket.image,
-                 ticketKey: ticket.ticketKey
+                 ticketKey: ticket.ticketKey,
+                 completed:false
              });
          }
 
@@ -119,11 +121,15 @@
                  takenImage: false,
                  takenUid: false,
                  image: ticket.image,
-                 ticketKey: ticket.ticketKey
+                 ticketKey: ticket.ticketKey,
+                 completed:false
              });
          }
 
          $scope.completeTicket = function(ticket, user) {
+             var newKey = firebase.database().ref().child("users/" + ticket.takenUid + "/completed/").push().key;
+             var newKey2 = firebase.database().ref().child("users/" + user.uid + "/finished/").push().key;
+
              database.ref("tickets/" + ticket.ticketKey).set({
                  ticketTitle: ticket.ticketTitle,
                  description: ticket.description,
@@ -134,17 +140,17 @@
                  email: ticket.email,
                  taken: true,
                  takenName: ticket.takenName,
-                 takenEmail: ticket,takenEmail,
-                 takenImage: ticket,takenImage,
+                 takenEmail: ticket.takenEmail,
+                 takenImage: ticket.takenImage,
                  takenUid: ticket.takenUid,
                  image: ticket.image,
                  ticketKey: ticket.ticketKey,
                  completed: true
              });
              // UPDATE helper with a completed task
-             database.ref("users/" + ticket.takenUid + "/completed").set(ticket);
+             database.ref("users/" + ticket.takenUid + "/completed/" + newKey).set(ticket);
              // UPDATE user with a finished task
-             database.ref("users/" + user.uid + "/finished").set(ticket);
+             database.ref("users/" + user.uid + "/finished/" + newKey2).set(ticket);
          }
 
          const getProfile = (user) => {
