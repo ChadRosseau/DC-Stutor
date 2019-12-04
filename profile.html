@@ -1,74 +1,219 @@
 <div class="profileWrapper">
     <div class="profileBackdrop">
-        <div class="createProfilePrompt" id="createProfilePrompt">
+        <div class="createProfilePrompt" id="createProfilePrompt" ng-show="user && !profile.fullName">
             <h3>You need to complete your profile before you can access this page.</h3>
             <h3>Complete now?</h3>
             <button ng-click="createProfileFormSwitch()">BEGIN</button>
         </div>
-        <div class="profileForm" id="profileForm">
-            <div class="profileBasicsInput">
-                <h4>Basic info</h4>
-                <label>
-                    Full name:
-                    <br>
-                    <input type="text" name="">
-                </label>
-                <label>
-                    Description:
-                    <br>
-                    <textarea placeholder="I am in year _. I love __, __and __. Happy to help out with any of these subjects."></textarea>
-                </label>
-                <label>
-                    Birthday:
-                    <br>
-                    <input type="date" name="">
-                </label>
-            </div>
-            <div class="requirementNotice">
-                <h5>PLEASE NOTE ALL <br> FIELDS ARE REQUIRED</h5>
-                <button>SUBMIT</button>
-                <h6>Error: Not all fields completed</h6>
-            </div>
-            <div class="profileSubjectsInput">
-                <h4>Best Subjects:</h4>
-                <div class="subjectsColumnContainer">
-                    <div class="subjectsColumn">
-                        <label><input type="checkbox" name=""> Math</label>
-                        <label><input type="checkbox" name=""> English</label>
-                        <label><input type="checkbox" name=""> Chinese</label>
-                        <label><input type="checkbox" name=""> Art</label>
-                        <label><input type="checkbox" name=""> Music</label>
-                        <label><input type="checkbox" name=""> PHE</label>
+        <div class="profileForm container-fluid" id="profileForm">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="profileBasicsInput box">
+                        <h4>Basic info</h4>
+                        <label>
+                            Full name:
+                            <br>
+                            <input type="text" name="" ng-model="newProfile.fullName">
+                        </label>
+                        <label>
+                            Description:
+                            <br>
+                            <textarea placeholder="I am in year _. I love __, __and __. Happy to help out with any of these subjects." ng-model="newProfile.description"></textarea>
+                        </label>
+                        <label>
+                            Birthday:
+                            <br>
+                            <input type="date" name="" ng-model="newProfile.bday">
+                        </label>
                     </div>
-                    <div class="subjectsColumn">
-                        <label><input type="checkbox" name=""> Science</label>
-                        <label><input type="checkbox" name=""> I & S</label>
-                        <label><input type="checkbox" name=""> Spanish</label>
-                        <label><input type="checkbox" name=""> Drama</label>
-                        <label><input type="checkbox" name=""> Design</label>
-                        <label><input type="checkbox" name=""> CE</label>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="profileSubjectsInput box">
+                        <h4>Best Subjects:</h4>
+                        <div class="subjectsColumnContainer">
+                            <div class="subjectsColumn">
+                                <label><input ng-true-value="'Math'" type="checkbox" name="subject" ng-model="newProfile.subjects.math"> Math</label>
+                                <label><input ng-true-value="'English'" type="checkbox" name="subject" ng-model="newProfile.subjects.english"> English</label>
+                                <label><input ng-true-value="'Chinese'" type="checkbox" name="subject" ng-model="newProfile.subjects.chinese"> Chinese</label>
+                                <label><input ng-true-value="'Art'" type="checkbox" name="subject" ng-model="newProfile.subjects.art"> Art</label>
+                                <label><input ng-true-value="'Music'" type="checkbox" name="subject" ng-model="newProfile.subjects.music"> Music</label>
+                                <label><input ng-true-value="'PHE'" type="checkbox" name="subject" ng-model="newProfile.subjects.phe"> PHE</label>
+                            </div>
+                            <div class="subjectsColumn">
+                                <label><input ng-true-value="'Science'" type="checkbox" name="subject" ng-model="newProfile.subjects.science"> Science</label>
+                                <label><input ng-true-value="'I & S'" type="checkbox" name="subject" ng-model="newProfile.subjects.is"> I & S</label>
+                                <label><input ng-true-value="'Spanish'" type="checkbox" name="subject" ng-model="newProfile.subjects.spanish"> Spanish</label>
+                                <label><input ng-true-value="'Drama'" type="checkbox" name="subject" ng-model="newProfile.subjects.drama"> Drama</label>
+                                <label><input ng-true-value="'Design'" type="checkbox" name="subject" ng-model="newProfile.subjects.design"> Design</label>
+                                <label><input ng-true-value="'CE'" type="checkbox" name="subject" ng-model="newProfile.subjects.ce"> CE</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="requirementNotice box">
+                        <h5>PLEASE NOTE ALL <br> FIELDS ARE REQUIRED</h5>
+                        <button ng-click="createProfile(newProfile, user)" ng-show="newProfile.fullName && newProfile.description && newProfile.subjects && newProfile.bday">SUBMIT</button>
+                        <h6>Error: Not all fields completed</h6>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="profile">
+        <div class="profile" ng-show="user && profile.fullName">
             <div class=profileImage style="background-image: url({{user.photoURL}});"></div>
-            <div class="profileInfo">
+            <div class="profileInfo" ng-init="edit = false">
                 <div class="profileBasics">
-                    <label>
-                        <h4>Full name:</h4>
-                        <input type="text" name="" value="{{user.name}}">
-                    </label>
-                    <label>
-                        <h4>Description:</h4>
-                        <textarea value="{{user.description}}"></textarea>
-                    </label>
-                    <label>
-                        <h4>Birthday:</h4>
-                        <input type="date" name="">
-                    </label>
+                    <div class="innerBox">
+                        <h4>{{profile.fullName}}</h4>
+                        <label ng-show="edit">
+                            <h4>Full name:</h4>
+                            <input type="text" name="" value="{{user.name}}">
+                        </label>
+                        <p>About: <br>{{profile.description}}</p>
+                        <label ng-show="edit">
+                            <h4>Description:</h4>
+                            <textarea value="{{user.description}}"></textarea>
+                        </label>
+                        <p>DOB: {{profile.bday}}</p>
+                        <label ng-show="edit">
+                            <h4>Birthday:</h4>
+                            <input type="date" name="">
+                        </label>
+                    </div>
+                    <div class="innerBox">
+                        <h4>Subjects:</h4>
+                        <ul>
+                            <li ng-show="profile.subjects.math">Maths</li>
+                            <li ng-show="profile.subjects.science">Science</li>
+                            <li ng-show="profile.subjects.english">English</li>
+                            <li ng-show="profile.subjects.chinese">Chinese</li>
+                            <li ng-show="profile.subjects.art">Art</li>
+                            <li ng-show="profile.subjects.music">Music</li>
+                            <li ng-show="profile.subjects.ce">CE</li>
+                            <li ng-show="profile.subjects.is">I & S</li>
+                            <li ng-show="profile.subjects.phe">PHE</li>
+                            <li ng-show="profile.subjects.spanish">Spanish</li>
+                            <li ng-show="profile.subjects.drama">Drama</li>
+                            <li ng-show="profile.subjects.design">Design</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="profileSubjects">
+            </div>
+        </div>
+    </div>
+    <div class="profileBackdrop tickets container-fluid" ng-show="profile.fullName">
+        <h2>Tickets:</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="currentTicketsOwn innerBox">
+                    <h4>Make Ticket:</h4>
+                    <hr>
+                    <div class="addTicket">
+                        <label>
+                            Ticket Title:
+                            <input type="text" name="" ng-model="newTicket.title">
+                        </label>
+                        <label>
+                            Deadline:
+                            <input type="date" name="" ng-model="newTicket.deadline">
+                        </label>
+                        <label>Description:</label>
+                        <textarea ng-model="newTicket.description"></textarea>
+                        <label>Subject:</label>
+                        <select ng-model="newTicket.subject">
+                            <option value="Maths">Maths</option>
+                            <option value="Science">Science</option>
+                            <option value="English">English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="I & S">I & S</option>
+                            <option value="PHE">PHE</option>
+                            <option value="CE">CE</option>
+                            <option value="Art">Art</option>
+                            <option value="Music">Music</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Design">Design</option>
+                        </select>
+                        <br>
+                        <button ng-click="createTicket(newTicket,user)" ng-show="newTicket.title && newTicket.deadline && newTicket.description && newTicket.subject">Submit Ticket</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="currentTicketsOwn innerBox" ng-init="taken = false">
+                    <h4>Own Tickets: <br>
+                        <span ng-click="taken = true" ng-class="{active: taken == true}">Taken</span>
+                        <span ng-click="taken = false" ng-class="{active: taken == false}">Open</span>
+                    </h4>
+                    <hr>
+                    <div class="myTickets">
+                        <div class="myTicket" ng-repeat="ticket in tickets" ng-if="ticket.uid == user.uid" ng-show="ticket.taken == $parent.taken">
+                            <button ng-click="deleteTicket(ticket,user)">Delete</button>
+                            <button ng-click="helpPerson(ticket,user)">Help</button>
+                            <div class="ticketInfo">
+                                <h5>{{ticket.ticketTitle}}</h5>
+                                <p>Subject: {{ticket.subject}}</p>
+                                <hr>
+                                <p>{{ticket.description}}</p>
+                                <p>Deadline: {{ticket.deadline}}</p>
+                                <hr>
+                            </div>
+                            <div class="ticketOwner">
+                                <img src="{{ticket.image}}" alt="{{user.displayName}}">
+                                <h5>{{ticket.name}}</h5>
+                                <p>Email: {{ticket.email}}</p>
+                                <hr>
+                            </div>
+                            <div class="ticketStatus">
+                                <h5>Status:
+                                    <span ng-if="ticket.taken">Taken</span>
+                                    <span ng-if="!ticket.taken">Open</span>
+                                </h5>
+                                <div class="innerStatus" ng-show="ticket.taken">
+                                    <img src="{{ticket.takenImage}}" alt="{{ticket.takenName}}">
+                                    <p>Name: {{ticket.takenName}}</p>
+                                    <p>Email: <a href="mailto:{ticket.takeEmail}}">{{ticket.takenEmail}}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="currentTicketsHelp innerBox">
+                    <h4>Helping Tickets:</h4>
+                    <hr>
+                    <div class="myTickets">
+                        <div class="myTicket" ng-repeat="ticket in tickets" ng-if="ticket.takenName == user.displayName">
+                            <button ng-click="unHelpPerson(ticket,user)">Un-help</button>
+                            <button ng-click="completeTicket(ticket,user)">Complete</button>
+                            <div class="ticketInfo">
+                                <h5>{{ticket.ticketTitle}}</h5>
+                                <p>Subject: {{ticket.subject}}</p>
+                                <hr>
+                                <p>{{ticket.description}}</p>
+                                <p>Deadline: {{ticket.deadline}}</p>
+                                <hr>
+                            </div>
+                            <div class="ticketOwner">
+                                <img src="{{ticket.image}}" alt="{{user.displayName}}">
+                                <h5>{{ticket.name}}</h5>
+                                <p>Email:  <a href="mailto:{ticket.takeEmail}}">{{ticket.email}}</a></p>
+                                <hr>
+                            </div>
+                            <div class="ticketStatus">
+                                <h5>Status:
+                                    <span ng-if="ticket.taken">Taken</span>
+                                    <span ng-if="!ticket.taken">Open</span>
+                                </h5>
+                                <div class="innerStatus" ng-show="ticket.taken">
+                                    <img src="{{ticket.takenImage}}" alt="{{ticket.takenName}}">
+                                    <p>Name: {{ticket.takenName}}</p>
+                                    <p>Email: {{ticket.takenEmail}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

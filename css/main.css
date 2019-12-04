@@ -215,32 +215,39 @@ a:hover {
 
 /* Profile Page */
 .profileWrapper {
-    width: 100vw;
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
     background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 100px 20px;
 }
 
+.profileWrapper .box {
+    min-height: 350px;
+    margin: 10px;
+    text-align: center;
+    padding: 30px 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 7px 0px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.box input[type="text"], .box input[type="date"] {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 3px navy solid;
+}
+
+
 .profileBackdrop {
-    position:relative;
-    width: 70vw;
-    min-height: 70vh;
     background-color: #FFF;
     padding: 40px;
-    left: auto;
-    top: 5%;
-    border-radius: 20px;
+    max-width: 1000px;
+    margin: 10px auto;
 }
 
 .createProfilePrompt {
-    display: none;
-    /*display: flex; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding: 40px;
 }
 
@@ -269,23 +276,20 @@ a:hover {
 }
 
 .profileBasicsInput {
-    min-height: 350px;
-    padding: 20px;
-    border: 5px solid navy;
-    border-radius: 20px;
-    display: flex;
-    margin: 20px;
-    flex-direction: column;
-    text-align: center;
+    
 }
 
-.profileBasicsInput h4 {
+.box h4 {
     color: navy;
+    font-size: 26px;
 }
 
 .profileBasicsInput textarea {
-    width: 85%;
+    width: 100%;
     height: 110px;
+    padding: 10px;
+    border: 0;
+    border-bottom: 3px navy solid;
 }
 
 .profileBasicsInput input {
@@ -293,96 +297,195 @@ a:hover {
 }
 
 .requirementNotice {
-    margin-left: -20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  
 }
 
 .requirementNotice h5 {
-    border: 3px solid navy;
-    border-radius: 20px;
-    color: navy;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
     text-align: center;
     margin-bottom: 50px;
+    background-color: #585858;
+    color: #fff;
+    font-size: 16px;
 }
 
 .requirementNotice button {
     border: 3px solid navy;
-    background: none;
-    padding: 10px;
-    border-radius: 10px;
+    background: #fff;
+    padding: 10px 15px;
     font-weight: bold;
     color: navy;
     margin-bottom: 50px;
 }
 
 .requirementNotice h6 {
-    border: 3px solid red;
-    border-radius: 20px;
-    color: red;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #fff;
+    padding: 10px;
     text-align: center;
-    margin-bottom: 50px;
-    visibility: hidden;
+    background-color: red;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    font-size: 14px;
 }
 
 .profileSubjectsInput {
-    min-height: 350px;
-    padding: 20px;
-    border: 5px solid navy;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
 }
 
-.profileSubjectsInput h4 {
-    margin-bottom: 30px;
-    color: navy;
-    font-size: 2em;
-    text-align: center;
-}
 
 .subjectsColumnContainer {
-	display: flex;
-	flex-direction: auto;
-    border: 3px solid navy;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
     border-radius: 10px;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
 }
 
 .profileSubjectsInput .subjectsColumnContainer .subjectsColumn {
     display: flex;
-    align-items: left;
-    justify-content: space-around;
+    display: -webkit-flex;
+    display: -ms-flex;
+    align-items: baseline;
+    -webkit-align-items: baseline;
+    -ms-align-items: baseline;
     flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     padding: 10px;
 }
 
 .profile {
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
 }
 
 .profile .profileImage {
-    width: 290px;
-    height: 290px;
+    width: 100px;
+    height: 100px;
     background-size: cover;
-    border: 5px solid navy;
-    border-radius: 10px;
+    border-radius: 50%;
     margin-right: 50px;
+    object-fit: cover;
 }
 
 .profile .profileBasics {
     display: flex;
-    flex-direction: column;
+    display: -webkit-flex;
+    display: -ms-flex;
+}
+
+.profileBasics .innerBox {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 0 5px;
+    min-width: 300px;
+}
+
+.tickets {
+
+}
+
+.tickets .innerBox {
+    margin: 10px 0;
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+.addTicket input {
+    display: block;
+    padding: 10px;
+}
+
+.addTicket input[type="text"], .addTicket input[type="date"] {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 3px navy solid;
+}
+
+.addTicket textarea {
+    width: 100%;
+    height: 110px;
+    padding: 10px;
+    border: 0;
+    border-bottom: 3px navy solid;
+}
+
+.addTicket button {
+    margin-top: 20px;
+    border: 3px solid navy;
+    background: #fff;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: navy;
+}
+
+.myTicket {
+    background-color: #fff;
+    padding: 20px 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.3);
+    border-bottom: 3px navy solid;
+    position: relative;
+}
+
+.myTicket button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 0;
+    background: red;
+    border-radius: 10px;
+    font-size: 10px;
+    color: #fff;
+}
+.myTicket button:nth-child(2) {
+    top: 25px;
+    background: navy;
+}
+
+.myTicket button:hover {
+    background: green;
+}
+
+
+.ticketOwner, .ticketStatus {
+    position: relative;
+}
+
+.ticketOwner img, .ticketStatus img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+}
+
+.currentTicketsOwn h4 span {
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #585858;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.currentTicketsOwn h4 span.active {
+    background-color: navy;
+    color: #fff;
 }
 
 /* About page */
@@ -481,6 +584,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 100px 0;
 }
 
 .loginWrapper {
