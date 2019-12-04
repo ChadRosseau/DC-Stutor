@@ -140,32 +140,41 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="currentTicketsOwn innerBox" ng-init="taken = false">
+                <div class="currentTicketsOwn innerBox" ng-init="taken = 0">
                     <h4>Own Tickets: <br>
-                        <span ng-click="taken = true" ng-class="{active: taken == true}">Taken</span>
-                        <span ng-click="taken = false" ng-class="{active: taken == false}">Open</span>
+                        <span ng-click="taken = 1" ng-class="{active: taken == 1}">Taken</span>
+                        <span ng-click="taken = 0" ng-class="{active: taken == 0}">Open</span>
+                        <span ng-click="taken = 3" ng-class="{active: taken == 3}">Completed</span>
                     </h4>
                     <hr>
                     <div class="myTickets">
-                        <div class="myTicket" ng-repeat="ticket in tickets" ng-if="ticket.uid == user.uid" ng-show="ticket.taken == $parent.taken">
-                            <button ng-click="deleteTicket(ticket,user)">Delete</button>
-                            <button ng-click="helpPerson(ticket,user)">Help</button>
+                        <div class="myTicket" ng-repeat="ticket in tickets" ng-if="ticket.uid == user.uid" ng-show="(ticket.taken == $parent.taken && !ticket.completed) || ($parent.taken == 3 && ticket.completed)">
+                            <div class="status open" ng-show="ticket.taken == false && !ticket.completed">
+                                OPEN
+                            </div>
+                            <div class="status taken" ng-show="ticket.taken == true && !ticket.completed">
+                                TAKEN
+                            </div>
+                            <div class="status completed" ng-show="ticket.taken == true && ticket.completed">
+                                COMPLETED
+                            </div>
+                            <button ng-click="deleteTicket(ticket,user)" ng-show="!ticket.completed">Delete</button>
                             <div class="ticketInfo">
                                 <h5>{{ticket.ticketTitle}}</h5>
-                                <p>Subject: {{ticket.subject}}</p>
+                                <p class="deadline">Subject: {{ticket.subject}}</p>
                                 <hr>
                                 <p>{{ticket.description}}</p>
-                                <p>Deadline: {{ticket.deadline}}</p>
+                                <p class="deadline">Deadline: {{ticket.deadline}}</p>
                                 <hr>
                             </div>
                             <div class="ticketOwner">
                                 <img src="{{ticket.image}}" alt="{{user.displayName}}">
-                                <h5>{{ticket.name}}</h5>
+                                <h5 class="smallTitle">{{ticket.name}}</h5>
                                 <p>Email: {{ticket.email}}</p>
                                 <hr>
                             </div>
                             <div class="ticketStatus">
-                                <h5>Status:
+                                <h5 class="smallTitle">Status:
                                     <span ng-if="ticket.taken">Taken</span>
                                     <span ng-if="!ticket.taken">Open</span>
                                 </h5>
@@ -180,29 +189,39 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="currentTicketsHelp innerBox">
-                    <h4>Helping Tickets:</h4>
+                <div class="currentTicketsHelp innerBox" ng-init="completed = false">
+                    <h4>Helping Tickets:
+                        <br>
+                        <span ng-click="completed = true" ng-class="{active: completed == true}">Completed</span>
+                        <span ng-click="completed = false" ng-class="{active: completed == false}">Pending</span>
+                    </h4>
                     <hr>
                     <div class="myTickets">
-                        <div class="myTicket" ng-repeat="ticket in tickets" ng-if="ticket.takenName == user.displayName">
-                            <button ng-click="unHelpPerson(ticket,user)">Un-help</button>
-                            <button ng-click="completeTicket(ticket,user)">Complete</button>
+                        <div class="myTicket" ng-repeat="ticket in tickets" ng-if="ticket.takenName == user.displayName" ng-show="ticket.taken == true && ticket.completed == $parent.completed">
+                            <div class="status completed" ng-show="ticket.taken == true && ticket.completed">
+                                COMPLETED
+                            </div>
+                            <div class="status open" ng-show="ticket.taken == true && !ticket.completed">
+                                PENDING
+                            </div>
+                            <button ng-click="unHelpPerson(ticket,user)" ng-show="ticket.completed == false">Un-help</button>
+                            <button ng-click="completeTicket(ticket,user)" ng-show="ticket.completed == false" class="help">Complete</button>
                             <div class="ticketInfo">
                                 <h5>{{ticket.ticketTitle}}</h5>
-                                <p>Subject: {{ticket.subject}}</p>
+                                <p class="deadline">Subject: {{ticket.subject}}</p>
                                 <hr>
                                 <p>{{ticket.description}}</p>
-                                <p>Deadline: {{ticket.deadline}}</p>
+                                <p class="deadline">Deadline: {{ticket.deadline}}</p>
                                 <hr>
                             </div>
                             <div class="ticketOwner">
                                 <img src="{{ticket.image}}" alt="{{user.displayName}}">
-                                <h5>{{ticket.name}}</h5>
-                                <p>Email:  <a href="mailto:{ticket.takeEmail}}">{{ticket.email}}</a></p>
+                                <h5 class="smallTitle">{{ticket.name}}</h5>
+                                <p>Email: <a href="mailto:{ticket.takeEmail}}">{{ticket.email}}</a></p>
                                 <hr>
                             </div>
                             <div class="ticketStatus">
-                                <h5>Status:
+                                <h5 class="smallTitle">Status:
                                     <span ng-if="ticket.taken">Taken</span>
                                     <span ng-if="!ticket.taken">Open</span>
                                 </h5>
