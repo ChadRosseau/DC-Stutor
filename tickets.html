@@ -1,57 +1,121 @@
-<h1>TICKETS</h1>
-<div class="ticketColumnWrapper">
-    <div class="ticketColumn">
-        <h2>Help needed</h2>
-        <div class="ticket">
-            <h5>Science Report</h5>
-            <p>Need help with Criterion BC science report on osmosis.</p>
-            <p>Joe</p>
-        </div>
-        <div class="ticket">
-            <h5>English Essay</h5>
-            <p>Need help with Lord of the Flies english essay.</p>
-            <p>Steve</p>
-        </div>
-        <div class="ticket">
-            <h5>PE reflections</h5>
-            <p>Need help with invasion games PE reflections.</p>
-            <p>Bob</p>
-        </div>
+<div class="ticketBulletin container-fluid">
+    <h1>TICKET BULLETIN</h1>
+    <div class="ticketFilter">
+        <p ng-click="filter = 'all'" ng-class="{active: filter == 'all'}">All</p>
+        <p ng-click="filter = 'Math'" ng-class="{active: filter == 'Math'}">Math</p>
+        <p ng-click="filter = 'Science'" ng-class="{active: filter == 'Science'}">Science</p>
+        <p ng-click="filter = 'English'" ng-class="{active: filter == 'English'}">English</p>
+        <p ng-click="filter = 'I & S'" ng-class="{active: filter == 'I & S'}">I & S</p>
+        <p ng-click="filter = 'Chinese'" ng-class="{active: filter == 'Chinese'}">Chinese</p>
+        <p ng-click="filter = 'Spanish'" ng-class="{active: filter == 'Spanish'}">Spanish</p>
+        <p ng-click="filter = 'Design'" ng-class="{active: filter == 'Design'}">Design</p>
+        <p ng-click="filter = 'Art'" ng-class="{active: filter == 'Art'}">Art</p>
+        <p ng-click="filter = 'Drama'" ng-class="{active: filter == 'Drama'}">Drama</p>
+        <p ng-click="filter = 'Music'" ng-class="{active: filter == 'Music'}">Music</p>
+        <p ng-click="filter = 'PHE'" ng-class="{active: filter == 'PHE'}">PHE</p>
+        <p ng-click="filter = 'CE'" ng-class="{active: filter == 'CE'}">CE</p>
     </div>
-    <div class="ticketColumn">
-        <h2>In Progress</h2>
-        <div class="ticket">
-            <h5>Science Report</h5>
-            <p>Need help with Criterion BC science report on osmosis.</p>
-            <p>Joe</p>
+    <div class="ticketColumnWrapper row" ng-if="user.email.includes('@dc.edu.hk')">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="ticketColumn">
+                <h2>HELP NEEDED</h2>
+                <div class="myTicket" ng-repeat="ticket in tickets" ng-show="ticket.taken == false && (ticket.subject.includes(filter) || filter == 'all')" >
+                    <button ng-click="deleteTicket(ticket,user)" ng-if="ticket.uid == user.uid">Delete</button>
+                    <button ng-click="helpPerson(ticket,user)" ng-if="ticket.uid != user.uid">Help</button>
+                    <div class="ticketInfo">
+                        <h5>{{ticket.ticketTitle}}</h5>
+                        <p>Subject: {{ticket.subject}}</p>
+                        <hr>
+                        <p>{{ticket.description}}</p>
+                        <p>Deadline: {{ticket.deadline}}</p>
+                        <hr>
+                    </div>
+                    <div class="ticketOwner">
+                        <img src="{{ticket.image}}" alt="{{user.displayName}}">
+                        <h5>{{ticket.name}}</h5>
+                        <p>Email: {{ticket.email}}</p>
+                        <hr>
+                    </div>
+                    <div class="ticketStatus">
+                        <h5>Status:
+                            <span ng-if="ticket.taken">Taken</span>
+                            <span ng-if="!ticket.taken">Open</span>
+                        </h5>
+                        <div class="innerStatus" ng-show="ticket.taken">
+                            <img src="{{ticket.takenImage}}" alt="{{ticket.takenName}}">
+                            <p>Name: {{ticket.takenName}}</p>
+                            <p>Email: <a href="mailto:{ticket.takeEmail}}">{{ticket.takenEmail}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="ticket">
-            <h5>English Essay</h5>
-            <p>Need help with Lord of the Flies english essay.</p>
-            <p>Steve</p>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="ticketColumn">
+                <h2>IN PROGRESS</h2>
+                <div class="myTicket" ng-repeat="ticket in tickets" ng-show="ticket.taken == true && ticket.completed != true && (ticket.subject.includes(filter) || filter == 'all')">
+                    <button ng-click="deleteTicket(ticket,user)" ng-if="ticket.uid == user.uid">Delete</button>
+                    <button ng-click="unHelpPerson(ticket,user)" ng-if="ticket.takenUid == user.uid">Unhelp</button>
+                    <div class="ticketInfo">
+                        <h5>{{ticket.ticketTitle}}</h5>
+                        <p>Subject: {{ticket.subject}}</p>
+                        <hr>
+                        <p>{{ticket.description}}</p>
+                        <p>Deadline: {{ticket.deadline}}</p>
+                        <hr>
+                    </div>
+                    <div class="ticketOwner">
+                        <img src="{{ticket.image}}" alt="{{user.displayName}}">
+                        <h5>{{ticket.name}}</h5>
+                        <p>Email: {{ticket.email}}</p>
+                        <hr>
+                    </div>
+                    <div class="ticketStatus">
+                        <h5>Status:
+                            <span ng-if="ticket.taken">Taken</span>
+                            <span ng-if="!ticket.taken">Open</span>
+                        </h5>
+                        <div class="innerStatus" ng-show="ticket.taken">
+                            <img src="{{ticket.takenImage}}" alt="{{ticket.takenName}}">
+                            <p>Name: {{ticket.takenName}}</p>
+                            <p>Email: <a href="mailto:{ticket.takeEmail}}">{{ticket.takenEmail}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="ticket">
-            <h5>PE reflections</h5>
-            <p>Need help with invasion games PE reflections.</p>
-            <p>Bob</p>
-        </div>
-    </div>
-    <div class="ticketColumn">
-        <h2>Completed</h2>
-        <div class="ticket">
-            <h5>Science Report</h5>
-            <p>Need help with Criterion BC science report on osmosis.</p>
-            <p>Joe</p>
-        </div>
-        <div class="ticket">
-            <h5>English Essay</h5>
-            <p>Need help with Lord of the Flies english essay.</p>
-            <p>Steve</p>
-        </div>
-        <div class="ticket">
-            <h5>PE reflections</h5>
-            <p>Need help with invasion games PE reflections.</p>
-            <p>Bob</p>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="ticketColumn">
+                <h2>COMPLETED</h2>
+                <div class="myTicket" ng-repeat="ticket in tickets" ng-show="ticket.completed == true && (ticket.subject.includes(filter) || filter == 'all')">
+                    <button ng-click="deleteTicket(ticket,user)" ng-if="ticket.uid == user.uid">Delete</button>
+                    <div class="ticketInfo">
+                        <h5>{{ticket.ticketTitle}}</h5>
+                        <p>Subject: {{ticket.subject}}</p>
+                        <hr>
+                        <p>{{ticket.description}}</p>
+                        <p>Deadline: {{ticket.deadline}}</p>
+                        <hr>
+                    </div>
+                    <div class="ticketOwner">
+                        <img src="{{ticket.image}}" alt="{{user.displayName}}">
+                        <h5>{{ticket.name}}</h5>
+                        <p>Email: {{ticket.email}}</p>
+                        <hr>
+                    </div>
+                    <div class="ticketStatus">
+                        <h5>Status:
+                            <span ng-if="ticket.taken">Taken</span>
+                            <span ng-if="!ticket.taken">Open</span>
+                        </h5>
+                        <div class="innerStatus" ng-show="ticket.taken">
+                            <img src="{{ticket.takenImage}}" alt="{{ticket.takenName}}">
+                            <p>Name: {{ticket.takenName}}</p>
+                            <p>Email: <a href="mailto:{ticket.takeEmail}}">{{ticket.takenEmail}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

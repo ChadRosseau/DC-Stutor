@@ -3,7 +3,9 @@
  angular.module("myApp")
 
      .controller('mainCtrl', function($rootScope, $window, $scope, $location, $state, $firebaseObject, $firebaseArray, $sce) {
-
+        // Rootscopes
+        $rootScope.filter = "all";
+         
          // Firebase Reading
          let ref = database.ref("siteInfo");
          let siteInfo = $firebaseObject(ref);
@@ -231,6 +233,11 @@
              document.getElementById("createProfilePrompt").style.display = "none";
              document.getElementById("profileForm").style.display = "flex";
 
+         }
+
+         $scope.goFilter = function(subject) {
+            $rootScope.filter = subject;
+            window.location.replace("/#/tickets");
          }
 
 
