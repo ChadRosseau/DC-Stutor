@@ -22,10 +22,7 @@
              var newKey = firebase.database().ref().child('articles').push().key;
              database.ref("articles/" + newKey).set({
                  name: name,
-
-
              });
-
          }
 
 

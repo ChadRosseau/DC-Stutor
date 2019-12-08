@@ -517,6 +517,10 @@ h5.smallTitle {
     margin-bottom: 5px;
 }
 
+.myTicket .ticketInfo {
+    margin-top: -30px;
+}
+
 .innerBox h4 span {
     background-color: #fff;
     border-radius: 10px;
@@ -637,16 +641,15 @@ h5.smallTitle {
     padding: 50px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: 5px solid navy;
+    border: 5px groove #FFF;
     border-radius: 20px;
-    background-color: #A8ECF1;
-    color: navy;
+    color: #FFF;
 }
 
 .loginWrapper button {
     background-color: rgba(0, 0, 0, 0);
-    border: 1px solid navy;
-    color: navy;
+    border: 1px solid #FFF;
+    color: #FFF;
     padding: 10px 20px;
     border-radius: 5px;
 }

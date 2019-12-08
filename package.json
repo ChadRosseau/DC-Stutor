@@ -1,0 +1,23 @@
+{
+  "name": "stutor",
+  "version": "1.0.0",
+  "main": "index.html",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChadRosseau/Stutor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChadRosseau/Stutor/issues"
+  },
+  "homepage": "https://github.com/ChadRosseau/Stutor#readme",
+  "description": ""
+}
