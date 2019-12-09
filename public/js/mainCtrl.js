@@ -3,9 +3,20 @@
  angular.module("myApp")
 
      .controller('mainCtrl', function($rootScope, $window, $scope, $location, $state, $firebaseObject, $firebaseArray, $sce) {
-        // Rootscopes
-        $rootScope.filter = "all";
-         
+
+         $scope.changeProfile = function(user) {
+             if ($location.$$path == '/profile' && !user) {
+
+                 $window.location.href = "/#/login";
+             }
+         }
+
+
+
+
+         // Rootscopes
+         $rootScope.filter = "all";
+
          // Firebase Reading
          let ref = database.ref("siteInfo");
          let siteInfo = $firebaseObject(ref);
@@ -73,7 +84,7 @@
                  takenImage: false,
                  image: user.photoURL,
                  ticketKey: newKey,
-                 completed:false
+                 completed: false
              });
 
          }
@@ -99,7 +110,7 @@
                  takenUid: user.uid,
                  image: ticket.image,
                  ticketKey: ticket.ticketKey,
-                 completed:false
+                 completed: false
              });
          }
 
@@ -119,7 +130,7 @@
                  takenUid: false,
                  image: ticket.image,
                  ticketKey: ticket.ticketKey,
-                 completed:false
+                 completed: false
              });
          }
 
@@ -233,8 +244,8 @@
          }
 
          $scope.goFilter = function(subject) {
-            $rootScope.filter = subject;
-            window.location.replace("/#/tickets");
+             $rootScope.filter = subject;
+             window.location.replace("/#/tickets");
          }
 
 

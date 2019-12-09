@@ -173,52 +173,52 @@ a:hover {
     background-repeat: no-repeat;
 }
 
-.math {
+.subjectBulletin .math {
     background-image: url("https://scx1.b-cdn.net/csz/news/800/2019/howtoovercom.jpg");
 }
 
-.science {
+.subjectBulletin .science {
     background-image: url("https://shawglobalnews.files.wordpress.com/2018/11/curiouscast-listicle-science-featureimage.png?w=720");
 }
 
-.english {
+.subjectBulletin .english {
     background-image: url("https://c4.wallpaperflare.com/wallpaper/194/439/635/background-texture-surface-dark-wallpaper-preview.jpg");
 }
 
-.humanities {
+.subjectBulletin .humanities {
     background-image: url("https://media.istockphoto.com/vectors/abstract-world-map-blue-map-of-the-earth-from-the-square-points-dark-vector-id863621300?k=6&m=863621300&s=170667a&w=0&h=sjHGwoI0FZHfWc15VRT883ax9n9NnHOqT7Z2SHnVK68=");
 }
 
-.chinese {
+.subjectBulletin .chinese {
     background-image: url("https://previews.123rf.com/images/stevanovicigor/stevanovicigor1411/stevanovicigor141100036/33480545-chinese-script-pattern-as-oriental-background-white-characters-on-black-background.jpg");
 }
 
-.spanish {
+.subjectBulletin .spanish {
     background-image: url("https://ak9.picdn.net/shutterstock/videos/15526939/thumb/10.jpg");
 }
 
-.art {
+.subjectBulletin .art {
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfmtK7lwvkWkNexZD8PkiyCCk-wHaj8fZcmTnTw-omA9XuhCrw");
 }
 
-.drama {
+.subjectBulletin .drama {
     background-image: url("https://i.pinimg.com/474x/2d/58/9b/2d589b5f01b62f40e403c4f5e81ab524--stage-curtains-red-curtains.jpg");
 }
 
-.music {
+.subjectBulletin .music {
     background-image: url("https://images.vexels.com/media/users/3/102058/raw/efb18da597aa627e21dce33561bc9c40-colorful-music-background.jpg");
 }
 
-.phe {
+.subjectBulletin .phe {
     background-image: url("http://cdn.shopify.com/s/files/1/1619/4221/products/HJ04317_grande.jpg?v=1524200781");
     position: 20px 0px;
 }
 
-.design {
+.subjectBulletin .design {
     background-image: url("https://i.pinimg.com/originals/82/6d/73/826d73151940720cfb2b060bc02fc789.jpg");
 }
 
-.ce {
+.subjectBulletin .ce {
     background-image: url("http://schools.stlucie.k12.fl.us/lpa/wp-content/uploads/sites/5/2014/03/IB_LearnerProfileLG.jpg");
 }
 
@@ -255,6 +255,8 @@ a:hover {
     max-width: 1200px;
     margin: 10px auto;
 }
+
+.profileBackdrop .innerBox 
 
 .createProfilePrompt {
     padding: 40px;
@@ -445,6 +447,7 @@ a:hover {
     position: relative;
     font-size: 0.8rem;
     line-height: 0.75rem;
+    border-left: 3px solid grey;
 }
 
 .myTicket .status {
@@ -487,6 +490,55 @@ a:hover {
     background: green;
 }
 
+.myTicket.Maths {
+    border-left: 3px solid #169273;
+}
+
+.myTicket.Science {
+    border-left: 3px solid #0A634D;
+}
+
+.myTicket.English {
+    border-left: 3px solid #FB584B;
+}
+
+.myTicket.Chinese {
+    border-left: 3px solid #2A75A7;
+}
+
+.myTicket.Spanish {
+    border-left: 3px solid #2A75A7;
+}
+
+.myTicket.PHE {
+    border-left: 3px solid #E2BD2E;
+}
+
+.myTicket.Music {
+    border-left: 3px solid #7D5CB4;
+}
+
+.myTicket.Art {
+    border-left: 3px solid #D4193E;
+}
+
+.myTicket.Drama {
+    border-left: 3px solid #F8F636;
+}
+
+.myTicket.CE {
+    border-left: 3px solid #364B5E;
+}
+
+.myTicket.Design {
+    border-left: 3px solid #F69427;
+}
+
+
+
+
+
+
 
 .ticketOwner, .ticketStatus {
     position: relative;
@@ -519,6 +571,10 @@ h5.smallTitle {
 
 .myTicket .ticketInfo {
     margin-top: -30px;
+}
+
+.innerBox .myTickets .myTicket .ticketInfo {
+    margin-top: -10px;
 }
 
 .innerBox h4 span {

@@ -15,13 +15,13 @@
         <p ng-click="filter = 'PHE'" ng-class="{active: filter == 'PHE'}">PHE</p>
         <p ng-click="filter = 'CE'" ng-class="{active: filter == 'CE'}">CE</p>
     </div>
-    <div class="ticketColumnWrapper row" ng-if="user.email.includes('@dc.edu.hk')">
+    <div class="ticketColumnWrapper row">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="ticketColumn">
                 <h2>HELP NEEDED</h2>
-                <div class="myTicket" ng-repeat="ticket in tickets" ng-show="ticket.taken == false && (ticket.subject.includes(filter) || filter == 'all')" >
+                <div class="myTicket {{ticket.subject}}" ng-repeat="ticket in tickets" ng-show="ticket.taken == false && (ticket.subject.includes(filter) || filter == 'all')" >
                     <button ng-click="deleteTicket(ticket,user)" ng-if="ticket.uid == user.uid">Delete</button>
-                    <button ng-click="helpPerson(ticket,user)" ng-if="ticket.uid != user.uid">Help</button>
+                    <button ng-click="helpPerson(ticket,user)" ng-if="ticket.uid != user.uid && profile">Help</button>
                     <div class="ticketInfo">
                         <h5>{{ticket.ticketTitle}}</h5>
                         <p>Subject: {{ticket.subject}}</p>
@@ -30,7 +30,7 @@
                         <p>Deadline: {{ticket.deadline}}</p>
                         <hr>
                     </div>
-                    <div class="ticketOwner">
+                    <div class="ticketOwner"  ng-if="user.email.includes('@dc.edu.hk')">
                         <img src="{{ticket.image}}" alt="{{user.displayName}}">
                         <h5>{{ticket.name}}</h5>
                         <p>Email: {{ticket.email}}</p>
@@ -53,7 +53,7 @@
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="ticketColumn">
                 <h2>IN PROGRESS</h2>
-                <div class="myTicket" ng-repeat="ticket in tickets" ng-show="ticket.taken == true && ticket.completed != true && (ticket.subject.includes(filter) || filter == 'all')">
+                <div class="myTicket {{ticket.subject}}" ng-repeat="ticket in tickets" ng-show="ticket.taken == true && ticket.completed != true && (ticket.subject.includes(filter) || filter == 'all')">
                     <button ng-click="deleteTicket(ticket,user)" ng-if="ticket.uid == user.uid">Delete</button>
                     <button ng-click="unHelpPerson(ticket,user)" ng-if="ticket.takenUid == user.uid">Unhelp</button>
                     <div class="ticketInfo">
@@ -64,7 +64,7 @@
                         <p>Deadline: {{ticket.deadline}}</p>
                         <hr>
                     </div>
-                    <div class="ticketOwner">
+                    <div class="ticketOwner"  ng-if="user.email.includes('@dc.edu.hk')">
                         <img src="{{ticket.image}}" alt="{{user.displayName}}">
                         <h5>{{ticket.name}}</h5>
                         <p>Email: {{ticket.email}}</p>
@@ -75,7 +75,7 @@
                             <span ng-if="ticket.taken">Taken</span>
                             <span ng-if="!ticket.taken">Open</span>
                         </h5>
-                        <div class="innerStatus" ng-show="ticket.taken">
+                        <div class="innerStatus" ng-show="ticket.taken"  ng-if="user.email.includes('@dc.edu.hk')">
                             <img src="{{ticket.takenImage}}" alt="{{ticket.takenName}}">
                             <p>Name: {{ticket.takenName}}</p>
                             <p>Email: <a href="mailto:{ticket.takeEmail}}">{{ticket.takenEmail}}</a></p>
@@ -87,7 +87,7 @@
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="ticketColumn">
                 <h2>COMPLETED</h2>
-                <div class="myTicket" ng-repeat="ticket in tickets" ng-show="ticket.completed == true && (ticket.subject.includes(filter) || filter == 'all')">
+                <div class="myTicket {{ticket.subject}}" ng-repeat="ticket in tickets" ng-show="ticket.completed == true && (ticket.subject.includes(filter) || filter == 'all')">
                     <button ng-click="deleteTicket(ticket,user)" ng-if="ticket.uid == user.uid">Delete</button>
                     <div class="ticketInfo">
                         <h5>{{ticket.ticketTitle}}</h5>
@@ -97,7 +97,7 @@
                         <p>Deadline: {{ticket.deadline}}</p>
                         <hr>
                     </div>
-                    <div class="ticketOwner">
+                    <div class="ticketOwner"  ng-if="user.email.includes('@dc.edu.hk')">
                         <img src="{{ticket.image}}" alt="{{user.displayName}}">
                         <h5>{{ticket.name}}</h5>
                         <p>Email: {{ticket.email}}</p>
@@ -108,7 +108,7 @@
                             <span ng-if="ticket.taken">Taken</span>
                             <span ng-if="!ticket.taken">Open</span>
                         </h5>
-                        <div class="innerStatus" ng-show="ticket.taken">
+                        <div class="innerStatus" ng-show="ticket.taken"  ng-if="user.email.includes('@dc.edu.hk')">
                             <img src="{{ticket.takenImage}}" alt="{{ticket.takenName}}">
                             <p>Name: {{ticket.takenName}}</p>
                             <p>Email: <a href="mailto:{ticket.takeEmail}}">{{ticket.takenEmail}}</a></p>
