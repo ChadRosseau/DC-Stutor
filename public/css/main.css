@@ -1,16 +1,67 @@
 /*
 Colors:
-Background grey: #9F9F9F;
-previewWillButton: #CF0E18;
-deleteWillButton: #008221;
+Navbar: #A8ECF1;
+Links: rgba(2, 10, 91, 1.00);
+Link hover: rgba(2, 10, 91, 0.6);
+Grey box: #f5f5f5;
+Red alerts: #585858;
+Shadow: rgba(0, 0, 0, 0.3);
+.ticketFilter p.Maths:hover {
+Math: #169273;
+}
+
+.ticketFilter p.Science:hover {
+    Science: #0A634D;
+}
+
+.ticketFilter p.English:hover {
+    background-color: #FB584B;
+}
+
+.ticketFilter p.Chinese:hover {
+    background-color: #2A75A7;
+}
+
+.ticketFilter p.Spanish:hover {
+    background-color: #2A75A7;
+}
+
+.ticketFilter p.PHE:hover {
+    background-color: #E2BD2E;
+}
+
+.ticketFilter p.Music:hover {
+    background-color: #7D5CB4;
+}
+
+.ticketFilter p.Art:hover {
+    background-color: #D4193E;
+}
+
+.ticketFilter p.Drama:hover {
+    background-color: #F8F636;
+    color: #000;
+}
+
+.ticketFilter p.CE:hover {
+    background-color: #364B5E;
+}
+
+.ticketFilter p.Design:hover {
+    background-color: #F69427;
+}
+
+.ticketFilter .Humanities:hover {
+    background-color: #BE3A31;
+}
 */
 
 body {}
 
-*:focus, 
-*:active, 
-button:focus, 
-button:active, 
+*:focus,
+*:active,
+button:focus,
+button:active,
 input:focus,
 input:active {
     outline: none;
@@ -210,7 +261,7 @@ a:hover {
 }
 
 .subjectBulletin .phe {
-    background-image: url("http://cdn.shopify.com/s/files/1/1619/4221/products/HJ04317_grande.jpg?v=1524200781");
+    background-image: url("https://desfoli.de/media/image/b9/fc/ed/P1212.jpg");
     position: 20px 0px;
 }
 
@@ -228,7 +279,7 @@ a:hover {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    padding: 100px 20px;
+    padding: 50px 20px;
 }
 
 .profileWrapper .box {
@@ -237,26 +288,25 @@ a:hover {
     text-align: center;
     padding: 30px 10px;
     background-color: #f5f5f5;
-    box-shadow: 0 0 7px 0px rgba(0,0,0,0.3);
+    box-shadow: 0 0 7px 0px rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
-.box input[type="text"], .box input[type="date"] {
+.box input[type="text"],
+.box input[type="date"] {
     border: 0;
     padding: 10px;
     width: 100%;
     border-bottom: 3px navy solid;
 }
 
-
 .profileBackdrop {
     background-color: #FFF;
     padding: 40px;
     max-width: 1200px;
     margin: 10px auto;
+    border-radius: 10px;
 }
-
-.profileBackdrop .innerBox 
 
 .createProfilePrompt {
     padding: 40px;
@@ -273,7 +323,6 @@ a:hover {
     height: 50px;
     background-color: none;
     font-weight: bold;
-
     color: navy;
     border: 3px solid navy;
 
@@ -286,9 +335,7 @@ a:hover {
     position: relative;
 }
 
-.profileBasicsInput {
-    
-}
+.profileBasicsInput {}
 
 .box h4 {
     color: navy;
@@ -307,9 +354,7 @@ a:hover {
     text-align: center;
 }
 
-.requirementNotice {
-  
-}
+.requirementNotice {}
 
 .requirementNotice h5 {
     padding: 10px;
@@ -378,10 +423,11 @@ a:hover {
 }
 
 .profile .profileImage {
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     background-size: cover;
-    border-radius: 50%;
+    border: 3px solid navy;
+    border-radius: 10px;
     margin-right: 50px;
     object-fit: cover;
 }
@@ -405,6 +451,7 @@ a:hover {
     padding: 10px;
     height: 100%;
 }
+
 .currentTicketsOwn.innerBox {
     height: inherit;
 }
@@ -414,7 +461,8 @@ a:hover {
     padding: 10px;
 }
 
-.addTicket input[type="text"], .addTicket input[type="date"] {
+.addTicket input[type="text"],
+.addTicket input[type="date"] {
     border: 0;
     padding: 10px;
     width: 100%;
@@ -442,7 +490,7 @@ a:hover {
     background-color: #fff;
     padding: 40px 10px 20px;
     margin: 10px 0;
-    box-shadow: 0 0 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
     border-bottom: 3px navy solid;
     position: relative;
     font-size: 0.8rem;
@@ -481,7 +529,8 @@ a:hover {
     font-size: 10px;
     color: #fff;
 }
-.myTicket button.help{
+
+.myTicket button.help {
     top: 25px;
     background: navy;
 }
@@ -534,17 +583,21 @@ a:hover {
     border-left: 3px solid #F69427;
 }
 
+.Humanities {
+    border-left: 3px solid #BE3A31;
+}
 
 
 
 
 
-
-.ticketOwner, .ticketStatus {
+.ticketOwner,
+.ticketStatus {
     position: relative;
 }
 
-.ticketOwner img, .ticketStatus img {
+.ticketOwner img,
+.ticketStatus img {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -724,7 +777,7 @@ h5.smallTitle {
     padding: 20px;
     font-size: 60px;
     font-weight: bolder;
-    -webkit-text-fill-color: rgba(255,255,255,0.3);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
     -webkit-text-stroke-width: 2.5px;
     -webkit-text-stroke-color: white;
 }
@@ -770,10 +823,77 @@ h5.smallTitle {
     color: #FFF;
 }
 
+.ticketFilter p.Maths:hover {
+    background-color: #169273;
+}
+
+.ticketFilter p.Science:hover {
+    background-color: #0A634D;
+}
+
+.ticketFilter p.English:hover {
+    background-color: #FB584B;
+}
+
+.ticketFilter p.Chinese:hover {
+    background-color: #2A75A7;
+}
+
+.ticketFilter p.Spanish:hover {
+    background-color: #2A75A7;
+}
+
+.ticketFilter p.PHE:hover {
+    background-color: #E2BD2E;
+}
+
+.ticketFilter p.Music:hover {
+    background-color: #7D5CB4;
+}
+
+.ticketFilter p.Art:hover {
+    background-color: #D4193E;
+}
+
+.ticketFilter p.Drama:hover {
+    background-color: #F8F636;
+    color: #000;
+}
+
+.ticketFilter p.CE:hover {
+    background-color: #364B5E;
+}
+
+.ticketFilter p.Design:hover {
+    background-color: #F69427;
+}
+
+.ticketFilter .Humanities:hover {
+    background-color: #BE3A31;
+}
+
 .ticketColumnWrapper {
     display: flex;
     justify-content: space-around;
     padding-bottom: 100px;
+}
+
+.ticketAlert {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    padding: 5px;
+    margin: 10px auto;
+    width: fit-content;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    border-radius: 10px;
+    border: 2px solid #FFF;
+    color: red;
 }
 
 .ticketColumn {
@@ -899,4 +1019,27 @@ h5.smallTitle {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .profile,
+    .profileBasics {
+        flex-direction: column;
+    }
+
+    .profile .profileImage {
+        width: 275px;
+        height: 275px;
+    }
+
+    .profileBasics .innerBox {
+        min-width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
 }

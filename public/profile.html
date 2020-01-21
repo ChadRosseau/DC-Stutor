@@ -150,7 +150,7 @@
                     </h4>
                     <hr>
                     <div class="myTickets">
-                        <div class="myTicket" ng-repeat="ticket in tickets" ng-if="ticket.uid == user.uid" ng-show="(ticket.taken == $parent.taken && !ticket.completed) || ($parent.taken == 3 && ticket.completed)">
+                        <div class="myTicket {{ticket.subject}}" ng-repeat="ticket in tickets" ng-if="ticket.uid == user.uid" ng-show="(ticket.taken == $parent.taken && !ticket.completed) || ($parent.taken == 3 && ticket.completed)">
                             <div class="status open" ng-show="ticket.taken == false && !ticket.completed">
                                 OPEN
                             </div>
@@ -199,7 +199,7 @@
                     </h4>
                     <hr>
                     <div class="myTickets">
-                        <div class="myTicket" ng-repeat="ticket in tickets" ng-if="ticket.takenName == user.displayName" ng-show="ticket.taken == true && ticket.completed == $parent.completed">
+                        <div class="Humanities myTicket {{ticket.subject}}" ng-repeat="ticket in tickets" ng-if="ticket.takenName == user.displayName" ng-show="ticket.taken == true && ticket.completed == $parent.completed">
                             <div class="status completed" ng-show="ticket.taken == true && ticket.completed">
                                 COMPLETED
                             </div>

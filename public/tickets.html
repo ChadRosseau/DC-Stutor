@@ -1,25 +1,28 @@
 <div class="ticketBulletin container-fluid">
     <h1>TICKET BULLETIN</h1>
     <div class="ticketFilter">
-        <p ng-click="filter = 'all'" ng-class="{active: filter == 'all'}">All</p>
-        <p ng-click="filter = 'Math'" ng-class="{active: filter == 'Math'}">Math</p>
-        <p ng-click="filter = 'Science'" ng-class="{active: filter == 'Science'}">Science</p>
-        <p ng-click="filter = 'English'" ng-class="{active: filter == 'English'}">English</p>
-        <p ng-click="filter = 'I & S'" ng-class="{active: filter == 'I & S'}">I & S</p>
-        <p ng-click="filter = 'Chinese'" ng-class="{active: filter == 'Chinese'}">Chinese</p>
-        <p ng-click="filter = 'Spanish'" ng-class="{active: filter == 'Spanish'}">Spanish</p>
-        <p ng-click="filter = 'Design'" ng-class="{active: filter == 'Design'}">Design</p>
-        <p ng-click="filter = 'Art'" ng-class="{active: filter == 'Art'}">Art</p>
-        <p ng-click="filter = 'Drama'" ng-class="{active: filter == 'Drama'}">Drama</p>
-        <p ng-click="filter = 'Music'" ng-class="{active: filter == 'Music'}">Music</p>
-        <p ng-click="filter = 'PHE'" ng-class="{active: filter == 'PHE'}">PHE</p>
-        <p ng-click="filter = 'CE'" ng-class="{active: filter == 'CE'}">CE</p>
+        <p ng-click="filter = 'all'" ng-class="{active: filter == 'all'}" class="All">All</p>
+        <p ng-click="filter = 'Math'" ng-class="{active: filter == 'Math'}" class="Maths">Math</p>
+        <p ng-click="filter = 'Science'" ng-class="{active: filter == 'Science'}" class="Science">Science</p>
+        <p ng-click="filter = 'English'" ng-class="{active: filter == 'English'}" class="English">English</p>
+        <p ng-click="filter = 'I & S'" ng-class="{active: filter == 'I & S'}" class="Humanities">I & S</p>
+        <p ng-click="filter = 'Chinese'" ng-class="{active: filter == 'Chinese'}" class="Chinese">Chinese</p>
+        <p ng-click="filter = 'Spanish'" ng-class="{active: filter == 'Spanish'}" class="Spanish">Spanish</p>
+        <p ng-click="filter = 'Design'" ng-class="{active: filter == 'Design'}" class="Design">Design</p>
+        <p ng-click="filter = 'Art'" ng-class="{active: filter == 'Art'}" class="Art">Art</p>
+        <p ng-click="filter = 'Drama'" ng-class="{active: filter == 'Drama'}" class="Drama">Drama</p>
+        <p ng-click="filter = 'Music'" ng-class="{active: filter == 'Music'}" class="Music">Music</p>
+        <p ng-click="filter = 'PHE'" ng-class="{active: filter == 'PHE'}" class="PHE">PHE</p>
+        <p ng-click="filter = 'CE'" ng-class="{active: filter == 'CE'}" class="CE">CE</p>
+    </div>
+    <div class="ticketAlert">
+        <h2>Please sign in with a DC email to access more detailed information.</h2>
     </div>
     <div class="ticketColumnWrapper row">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="ticketColumn">
                 <h2>HELP NEEDED</h2>
-                <div class="myTicket {{ticket.subject}}" ng-repeat="ticket in tickets" ng-show="ticket.taken == false && (ticket.subject.includes(filter) || filter == 'all')" >
+                <div class="Humanities myTicket {{ticket.subject}}" ng-repeat="ticket in tickets" ng-show="ticket.taken == false && (ticket.subject.includes(filter) || filter == 'all')" >
                     <button ng-click="deleteTicket(ticket,user)" ng-if="ticket.uid == user.uid">Delete</button>
                     <button ng-click="helpPerson(ticket,user)" ng-if="ticket.uid != user.uid && profile">Help</button>
                     <div class="ticketInfo">
