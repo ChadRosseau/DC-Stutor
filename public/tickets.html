@@ -15,7 +15,7 @@
         <p ng-click="filter = 'PHE'" ng-class="{active: filter == 'PHE'}" class="PHE">PHE</p>
         <p ng-click="filter = 'CE'" ng-class="{active: filter == 'CE'}" class="CE">CE</p>
     </div>
-    <div class="ticketAlert" ng-if="user.email.includes('@dc.edu.hk') == 'false'">
+    <div class="ticketAlert" ng-if="user.email.includes('@dc.edu.hk') == false">
         <h2>Please sign in with a DC email to access more detailed information.</h2>
     </div>
     <div class="ticketColumnWrapper row">
