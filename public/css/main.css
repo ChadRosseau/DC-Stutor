@@ -6,54 +6,19 @@ Link hover: rgba(2, 10, 91, 0.6);
 Grey box: #f5f5f5;
 Red alerts: #585858;
 Shadow: rgba(0, 0, 0, 0.3);
-.ticketFilter p.Maths:hover {
 Math: #169273;
-}
+Science: #0A634D;
+English: #FB584B;
+Chinese: #2A75A7;
+Spanish: #2A75A7;
+PHE: #E2BD2E;
+Music: #7D5CB4;
+Art: #D4193E;
+Drama: #F8F636;
+CE: #364B5E;
+Design: #F69427;
+Humanities: #BE3A31;
 
-.ticketFilter p.Science:hover {
-    Science: #0A634D;
-}
-
-.ticketFilter p.English:hover {
-    background-color: #FB584B;
-}
-
-.ticketFilter p.Chinese:hover {
-    background-color: #2A75A7;
-}
-
-.ticketFilter p.Spanish:hover {
-    background-color: #2A75A7;
-}
-
-.ticketFilter p.PHE:hover {
-    background-color: #E2BD2E;
-}
-
-.ticketFilter p.Music:hover {
-    background-color: #7D5CB4;
-}
-
-.ticketFilter p.Art:hover {
-    background-color: #D4193E;
-}
-
-.ticketFilter p.Drama:hover {
-    background-color: #F8F636;
-    color: #000;
-}
-
-.ticketFilter p.CE:hover {
-    background-color: #364B5E;
-}
-
-.ticketFilter p.Design:hover {
-    background-color: #F69427;
-}
-
-.ticketFilter .Humanities:hover {
-    background-color: #BE3A31;
-}
 */
 
 body {}
