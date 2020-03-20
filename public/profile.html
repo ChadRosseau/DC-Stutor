@@ -239,4 +239,9 @@
             </div>
         </div>
     </div>
+    <br ng-if="user.email.includes('@dc.edu.hk') == false || !user">
+    <br ng-if="user.email.includes('@dc.edu.hk') == false || !user">
+    <div class="ticketAlert" ng-if="user.email.includes('@dc.edu.hk') == false || !user">
+        <h2>Please sign in with a DC email to enable ticket creation and management.</h2>
+    </div>
 </div>
