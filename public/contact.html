@@ -1,0 +1,65 @@
+<div class="contactHero">
+    <div class="contactWrap">
+        <div class="contactForm">
+            <h1>CONTACT</h1>
+            <h2>Name:</h2>
+            <h5>Chad <span ng-if="user.email.includes('@dc.edu.hk') == true">Rossouw </span></h5>
+            <h2 ng-if="user.email.includes('@dc.edu.hk') == true">Year Level</h2>
+            <h5 ng-if="user.email.includes('@dc.edu.hk') == true">Year 11</h5>
+            <h2>Occupation</h2>
+            <h5>Student</h5>
+            <h2>Location</h2>
+            <h5><span ng-if="user.email.includes('@dc.edu.hk') == true">Discovery College, </span>Hong Kong</h5>
+            <h2>Contact</h2>
+            <h3>Email</h3>
+            <h5>rossoc1@dc.edu.hk</h5>
+            <h2 ng-if="user.email.includes('@dc.edu.hk') == true">Phone</h2>
+            <h5 ng-if="user.email.includes('@dc.edu.hk') == true">+852 6937 1427</h5>
+        </div>
+        <div class="communityWrap">
+            <div class="communityInfo">
+                <span ng-if="user.email.includes('@dc.edu.hk') == true">Discovery College </span><span ng-if="user.email.includes('@dc.edu.hk') == false || !user">Our school</span> possesses a very friendly student body, most of which would be happy to help out if necessary. As such, there is no need to fear emailing them, as long as you are polite and understand if they refuse your request.
+            </div>
+                <i class="fa fa-angle-double-down" style="font-size:250px;
+    			-webkit-text-fill-color: rgba(255, 255, 255, 0.3);
+    			-webkit-text-stroke-width: 7px;
+   				-webkit-text-stroke-color: rgba(255, 255, 255, 1);
+   				margin-top: 30px;"
+   				ng-click="windowScroll(826)" 
+   				></i>
+        </div>
+    </div>
+</div>
+<div class="hero contactHero2">
+	<h2>FAQ</h2>
+    <div class="faqWrapper">
+        <div class="faqColumn">
+            <div class="faqRow">
+                <h4>HOW DO I SIGN UP?</h4>
+                <p>All you have to do is hit "login" in the top right. It will take you to a login page, where you can sign in with your gmail account. From there, a "profile" page option will appear. Navigate there, fill out your profile, and enjoy!</p>
+            </div>
+            <div class="faqRow">
+                <h4>WHAT FUNCTIONS DOES THE SITE HAVE?</h4>
+                <p>Stutor is equipped with a variety of functions, including: gmail login, ticket creation and management, database interaction, and much more. Get started and explore!</p>
+            </div>
+            <div class="faqRow">
+                <h4>WHO MADE THIS ALL? WHY?</h4>
+                <p>All relevant information about us and the vision for the project can be found on the <a href="#/about" ng-click="windowScroll(0)">about us page</a>.
+            </div>
+        </div>
+        <div class="faqColumn">
+            <div class="faqRow">
+                <h4>HOW WAS THIS SITE BUILT?</h4>
+                <p>Stutor is programmed mainly in HTML, CSS and Javascript, with an Angular Javascript framework. It also uses multiple Bootstrap elements, and utilizes a Firebase database and API to store, retrieve and manipulate data.</p>
+            </div>
+            <div class="faqRow">
+                <h4>IS STUTOR OPEN TO ALL SCHOOLS?</h4>
+                <p>Stutor is currently only available to <span ng-if="user.email.includes('@dc.edu.hk') == true">Discovery College.</span><span ng-if="user.email.includes('@dc.edu.hk') == false || !user">the school the creator, Chad, attends.</span> If you have any questions regarding use of Stutor for your own school, please get in contact using the information above.
+            </div>
+            <div class="faqRow">
+                <h4>Can I see some of the code?</h4>
+                <p>All of Stutor's code is stored in a Github project, which is currently private. If you have any questions regarding the code behind Stutor, please get in contact using the information above.</p>
+            </div>
+        </div>
+    </div>
+</div>

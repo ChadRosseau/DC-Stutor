@@ -21,6 +21,10 @@ Humanities: #BE3A31;
 
 */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {}
 
 *:focus,
@@ -54,6 +58,14 @@ a:hover {
     justify-content: space-around;
     align-items: center;
     /*border: 1px solid black;*/
+}
+
+.navLogoWrapper h2 {
+    font-weight: bolder;
+    -webkit-text-fill-color: rgba(2,12,126,0.05);
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: navy;
+    font-size: 40px;
 }
 
 .navLinkWrapper {
@@ -128,7 +140,6 @@ a:hover {
 }
 
 /* Home page */
-
 .homeHero1 {
     background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
     background-position: center;
@@ -187,6 +198,10 @@ a:hover {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.subject h3 {
+    font-size: 2.5em;
 }
 
 .subjectBulletin .math {
@@ -611,13 +626,18 @@ h5.smallTitle {
 
 /* About page */
 
-.aboutHero1 {
+.aboutHero {
     background-image: url("https://cdn.asiatatler.com/asiatatler/hk/i/2018/06/20183952-Online_DiscoveryCollege1_resized_2000x1320.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     display: flex;
-    height: 500px;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.aboutHero i:hover, .contactHero i:hover {
+    cursor: pointer;
 }
 
 .cardWrapper {
@@ -693,9 +713,167 @@ h5.smallTitle {
     color: #92d3ca;
 }
 
-.hero2 {
-    background: rgb(49, 51, 255);
-    background: linear-gradient(0deg, rgba(49, 51, 255, 1) 0%, rgba(12, 208, 222, 1) 97%);
+.aboutHero2 {
+    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.aboutRowWrapper {
+    margin: 100px;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutRow {
+    width: 80vw;
+    height: 350px;
+    border: 10px solid #FFF;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+}
+
+.aboutImg {
+    min-width: 300px;
+    height: 300px;
+    margin: 0px 20px;
+    border: 3px solid #FFF;
+    border-radius: 10px;
+    float: left;
+}
+
+.aboutImg1 {
+    background-image: url("https://i.imgur.com/3L1QcZ7.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.aboutImg2 {
+    background-image: url("https://cdn1.i-scmp.com/sites/default/files/styles/768x768/public/2018/01/18/05_-_discovery_college_teaches_students_to_explore_value_of_critical_thinking_.jpg?itok=UCMrMdAV");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.aboutImg3 {
+    background-image: url("https://isgibdiploma.weebly.com/uploads/2/3/5/7/23572084/426360_orig.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.aboutInfoWrap {
+    min-height: 300px;
+}
+
+.aboutInfoWrap h4 {
+    font-size: 2.5em;
+}
+
+/* Contact */
+.contactHero {
+    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contactWrap {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.contactForm {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.contactForm h1, 
+.contactForm h2, 
+.contactForm h3, 
+.contactForm h4, 
+.contactForm h5 {
+    line-height: 1.05em;
+}
+
+.communityWrap {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.communityInfo {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    color: #000;
+    margin-right: 50px;
+    top: 0;
+    min-height: 340px;
+    width: 67vw;
+    font-size: 2.3em;
+}
+
+.contactHero2 {
+    background: url("https://cdn.hipwallpaper.com/i/36/59/vSr0tG.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactHero2 h2 {
+    font-size: 150px;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 1);
+    margin-top: 50px;
+    margin-bottom: -20px;
+}
+
+.faqWrapper {
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}
+
+.faqColumn {
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh;
+    width: 50%;
+}
+
+.faqRow {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 20px;
+    padding: 20px;
 }
 
 /* Login */
@@ -916,10 +1094,13 @@ h5.smallTitle {
 }
 
 .footer h2 {
-    color: #FFF;
     margin: 0px;
     margin-right: auto;
     font-size: 3em;
+    font-weight: bolder;
+    -webkit-text-fill-color: rgba(2,12,126,0.0);
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: #FFF;
 }
 
 .footer h4 {
@@ -933,7 +1114,7 @@ h5.smallTitle {
 .footer .column {
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
+    min-width: 200px;
     height: 130px;
     flex-direction: column;
     margin: 5px;
@@ -941,6 +1122,10 @@ h5.smallTitle {
     justify-content: center;
     text-align: center;
     align-items: center;
+}
+
+.footer .column i:hover {
+    cursor: pointer;
 }
 
 .footer .logoRow {

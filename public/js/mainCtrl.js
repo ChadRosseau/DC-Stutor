@@ -248,6 +248,9 @@
              window.location.replace("/#/tickets");
          }
 
+         $scope.windowScroll = function(height) {
+             window.scrollTo(0, height);
+         }
 
 
      })

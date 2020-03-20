@@ -1,31 +1,64 @@
 <!-- Hero 1 -->
-    <div class="hero aboutHero1">
-        <div class="cardWrapper">
-            <div class="card">
-                <div class="logoBubble"><i class="material-icons">location_city</i></div>
-                <h3>INVEST IN <br> YOUR FUTURE</h3>
-                <p>Take control of your own learning through a powerful support structure, optimizing your growth with help from a huge student body.</p>
-                <a href="index.html">
-                    <h4>OPPORTUNITIES ></h4>
+<div class="hero aboutHero">
+    <div class="cardWrapper">
+        <div class="card">
+            <div class="logoBubble"><i class="material-icons">location_city</i></div>
+            <h3>INVEST IN <br> YOUR FUTURE</h3>
+            <p>Take control of your own learning through a powerful support structure, optimizing your growth with help from a huge student body.</p>
+            <a href="#/profile" ng-if="user">
+                <h4>GET STARTED ></h4>
+            </a>
+            <a href="#/login" ng-if="!user">
+                <h4>GET STARTED ></h4>
+            </a>
+        </div>
+        <div class="card">
+            <div class="logoBubble"><i class="material-icons" style="margin-left:3px;">account_balance</i></div>
+            <h3>PERSONALIZED LEARNING</h3>
+            <p>Find the perfect tutor with dozens to choose from, each with their own strengths. As experienced students, we know what it's like to stress over schoolwork. Let us help you!</p>
+            <a href="#/home">
+                <h4>OPTIONS ></h4>
+            </a>
+        </div>
+        <div class="card">
+            <div class="logoBubble"><i class="material-icons">camera_enhance</i></div>
+            <h3>SUPPORTIVE COMMUNITY</h3>
+            <p>Learn the way you deserve with Stutor's tutor-matching service. Post your project, gain immediate contact information, and update project status with intuitive controls.
+                <a href="#/about">
+                    <h4>ABOUT US ></h4>
                 </a>
+        </div>
+    </div>
+    <i class="fa fa-angle-double-down" style="font-size:250px;
+    -webkit-text-fill-color: rgba(146, 211, 202, 0.3);
+    -webkit-text-stroke-width: 7px;
+    -webkit-text-stroke-color: rgba(146, 211, 202, 1);
+    margin-top: -50px;"
+    ng-click="windowScroll(730)"></i>
+</div>
+<!-- Hero 2 -->
+<div class="hero aboutHero2">
+    <div class="aboutRowWrapper">
+        <div class="aboutRow">
+            <div class="aboutImg aboutImg1"></div>
+            <div class="aboutInfoWrap">
+                <h4>WHO WE ARE</h4>
+                <p>Chad <span ng-if="user.email.includes('@dc.edu.hk') == true">Rossouw</span> is a student <span ng-if="user.email.includes('@dc.edu.hk') == true">at Discovery College in Hong Kong</span>who is passionate about Computer Science and web development. He first began programming at 9 years of age, and has come a long way since then. The inspiration for Stutor began with a technology summit he attended in 2019, where different schools discussed student-led technological initatives and how they were improving student lives. Chad noticed how many projects were geared towards assisting students, and eventually came up with the idea for Stutor - a student-help website where young students in need could request assistance from older students who had completed said work in the past. He realised this idea through his IB Personal Project<span ng-if="user.email.includes('@dc.edu.hk') == true"> in Year 11</span>, building the website from scratch and pushing his programming skills to the limit.</p>
             </div>
-            <div class="card">
-                <div class="logoBubble"><i class="material-icons" style="margin-left:3px;">account_balance</i></div>
-                <h3>PERSONALIZED LEARNING</h3>
-                <p>Find the perfect tutor with dozens to choose from, each with their own strengths. As experienced students, we know what it's like to stress over schoolwork. Let us help you!</p>
-                <a href="index.html">
-                    <h4>OPTIONS ></h4>
-                </a>
+        </div>
+        <div class="aboutRow">
+            <div class="aboutImg aboutImg2"></div>
+            <div class="aboutInfoWrap">
+                <h4>WHAT WE DO</h4>
+                <p>Stutor is a student-help website geared towards the assistance of young students, often fresh to the MYP program. It provides students with a medium through which they are able to connect and express ideas, thoughts and opinions, helping match students and student-tutors who are best for each other. It works on the principle that any work a younger student is busy with has most likely been completed in the past by older students, who now possess the knowledge and experience necessary to assist in a meaningful way. Students are able to personalise profiles with a self-description and favourite subjects, while also gaining access to an intuitive ticket-adding and tracking system. Through the use of these services, students are able to take control of their own learning and gain the help they need.</p>
             </div>
-            <div class="card">
-                <div class="logoBubble"><i class="material-icons">camera_enhance</i></div>
-                <h3>SUPPORTIVE COMMUNITY</h3>
-                <p>Learn the way you deserve with Stutor's tutor selection service. See rating and comments for each tutor, and handpick which you believe suits your learning style best.
-                    <a href="about.html">
-                        <h4>ABOUT US ></h4>
-                    </a>
+        </div>
+        <div class="aboutRow">
+            <div class="aboutImg aboutImg3"></div>
+            <div class="aboutInfoWrap">
+                <h4>OUR GOAL</h4>
+                <p>Our goal at Stutor is to provide every <span ng-if="user.email.includes('@dc.edu.hk') == true">Discovery College </span>student with the opportunity to connect with a reliable tutor, even if it is just for a one-off project. Currently, most student support programs <span ng-if="user.email.includes('@dc.edu.hk') == true">at Discovery College </span><span ng-if="user.email.includes('@dc.edu.hk') == false || !user">around the world </span>fail to take advantage of the knowledge of experienced members of the student body, and miss out on a valuable resource. By acknowledging and providing support to this group, we believe student support can be revolutionized, and by extension far more effective. We aim to provide students with the tools necessary to quickly and easily accomplish this, through services such as profile personalization, ticket creation, ticket personalisation, ticket management, contact detail storage, and much more. Through Stutor, we strive to provide a new, unique and effective experience which completely redefines what it means to be a student or tutor.</p>
             </div>
         </div>
     </div>
-    <div class="hero hero2">
-    </div>
+</div>
