@@ -1337,6 +1337,7 @@ h5.smallTitle {
     i {
         cursor: default;
     }
+    
     /* Footer */
     .footer {
         flex-direction: column;
