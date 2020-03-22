@@ -44,6 +44,10 @@ app.config(function($routeProvider) {
             templateUrl: "login.html",
         })
 
+        .when("/secret", {
+            templateUrl: "secret.html",
+        })
+
         .otherwise({
             redirectTo: '/home'
         });
