@@ -1215,11 +1215,6 @@ h5.smallTitle {
 
 @media only screen and (max-width: 600px) {
 
-    /* Navbar */
-    .navBar {
-        margin-bottom: -5px;
-    }
-
     .navLogoWrapper h2 {
         font-size: 2em;
         margin-top: 5px;
@@ -1337,7 +1332,7 @@ h5.smallTitle {
     i {
         cursor: default;
     }
-    
+
     /* Footer */
     .footer {
         flex-direction: column;
