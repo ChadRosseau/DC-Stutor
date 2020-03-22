@@ -1403,5 +1403,10 @@ h5.smallTitle {
         width: 60vh;
         height: 50vh;
     }
+
+    .secretDiv h1 {
+        font-size: 30px;
+        margin-top: -20px; 
+    }
 }
 }
