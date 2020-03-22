@@ -11,7 +11,12 @@
              }
          }
 
+         // Window sizing
+         $scope.windowWidth = screen.width;
+         console.log($scope.windowWidth);
 
+         // Nav
+         var navOpen = false;
 
 
          // Rootscopes
@@ -238,18 +243,40 @@
 
          // Login page
          $scope.createProfileFormSwitch = function() {
-             document.getElementById("createProfilePrompt").style.display = "none";
-             document.getElementById("profileForm").style.display = "flex";
+            document.getElementById("createProfilePrompt").style.display = "none";
+            document.getElementById("profileForm").style.display = "flex";
 
          }
 
          $scope.goFilter = function(subject) {
-             $rootScope.filter = subject;
-             window.location.replace("/#/tickets");
+            $rootScope.filter = subject;
+            window.location.replace("/#/tickets");
          }
 
-         $scope.windowScroll = function(height) {
-             window.scrollTo(0, height);
+         $scope.windowScroll = function(height, mobileHeight) {
+            if ($scope.windowWidth > 600) {
+                window.scrollTo(0, height);
+            } else {
+                window.scrollTo(0, mobileHeight);
+            }
+         }
+
+         $scope.openNav = function() {
+            if (navOpen == false) {
+                document.getElementById("line2").style.transform = "translateX(5px)";
+                document.getElementById("line3").style.transform = "translateX(3px)";
+                document.getElementById("mobileNav").style.display = "flex";
+                document.getElementById("navyBar").style.display = "none";
+                navOpen = true;
+            }
+            else if (navOpen == true) {
+                document.getElementById("line2").style.transform = "translateX(0px)";
+                document.getElementById("line3").style.transform = "translateX(0px)";
+                document.getElementById("mobileNav").style.display = "none";
+                document.getElementById("navyBar").style.display = "flex";
+                navOpen = false;
+            }
+            console.log(navOpen);
          }
 
 

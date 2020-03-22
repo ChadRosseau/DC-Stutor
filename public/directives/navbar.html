@@ -1,37 +1,61 @@
 <!-- Navbar -->
-    <nav>
-        <div class="navBar">
-            <!-- Logo -->
-
-            <!-- Links -->
-            <div class="navWrapper navLinkWrapper">
-                <div class="navLogoWrapper">
-                    <a href="/#/home" ng-click="windowScroll(0)"><h2>S T U T O R</h2></a>
-                </div>
-       
-                <a href="#/home">
-                    <div class="navLink">Home</div>
-                </a>
-                <a href="#/profile" ng-show="user">
-                    <div class="navLink">Dashboard</div>
-                </a>
-                <a href="#/tickets">
-                    <div class="navLink">Tickets</div>
-                </a>
-                <a href="#/about">
-                    <div class="navLink">About</div>
-                </a>
-                <a href="#/contact">
-                    <div class="navLink">Contact</div>
-                </a>
-            </div>
-            <a href="#/login" ng-show="!user">
-                <div class="loginButton">LOGIN</div>
+<nav>
+    <div class="navBar">
+        <!-- Logo -->
+        <div class="navLogoWrapper">
+            <a href="/#/home" ng-click="windowScroll(0)">
+                <h2>S T U T O R</h2>
             </a>
-            <button class="loginButton" ng-show="user" ng-click="logout()">LOGOUT</button>
         </div>
-    </nav>
-    <div class="navyBar" ng-show="user">
-        Welcome<span>, {{user.displayName}}</span>!
-        <div class="displayImage" style="background-image: url({{user.photoURL}});"></div>
-    </div>   
+        <!-- Links -->
+        <div class="navWrapper navLinkWrapper">
+            <a href="#/home">
+                <div class="navLink">Home</div>
+            </a>
+            <a href="#/profile" ng-show="user">
+                <div class="navLink">Dashboard</div>
+            </a>
+            <a href="#/tickets">
+                <div class="navLink">Tickets</div>
+            </a>
+            <a href="#/about">
+                <div class="navLink">About</div>
+            </a>
+            <a href="#/contact">
+                <div class="navLink">Contact</div>
+            </a>
+        </div>
+        <div class="mobileNavButton" ng-if="windowWidth < 600" ng-click="openNav()">
+            <div class="menuLogo">
+                <div class="line" id="line1"></div>
+                <div class="line" id="line2"></div>
+                <div class="line" id="line3"></div>
+            </div>
+        </div>
+        <a href="#/login" ng-show="!user">
+            <div class="loginButton">LOGIN</div>
+        </a>
+        <button class="loginButton" ng-show="user" ng-click="logout()">LOGOUT</button>
+    </div>
+</nav>
+<div class="navWrapper" id="mobileNav">
+    <a href="#/home">
+        <div class="navLink">Home</div>
+    </a>
+    <a href="#/profile" ng-show="user">
+        <div class="navLink">Dashboard</div>
+    </a>
+    <a href="#/tickets">
+        <div class="navLink">Tickets</div>
+    </a>
+    <a href="#/about">
+        <div class="navLink">About</div>
+    </a>
+    <a href="#/contact">
+        <div class="navLink">Contact</div>
+    </a>
+</div>
+<div class="navyBar" id="navyBar" ng-show="user">
+    Welcome<span>, {{user.displayName}}</span>!
+    <div class="displayImage" style="background-image: url({{user.photoURL}});"></div>
+</div>

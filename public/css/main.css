@@ -22,7 +22,7 @@ Humanities: #BE3A31;
 */
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {}
@@ -57,12 +57,11 @@ a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /*border: 1px solid black;*/
 }
 
 .navLogoWrapper h2 {
     font-weight: bolder;
-    -webkit-text-fill-color: rgba(2,12,126,0.05);
+    -webkit-text-fill-color: rgba(2, 12, 126, 0.05);
     -webkit-text-stroke-width: 2.5px;
     -webkit-text-stroke-color: navy;
     font-size: 40px;
@@ -81,7 +80,25 @@ a:hover {
 .navLink:hover {
     color: rgba(2, 10, 91, 0.6);
     text-decoration: none;
+}
 
+.mobileNavButton {
+    display: none;
+}
+
+.menuLogo {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+.line {
+    background-color: navy;
+    width: 20px;
+    height: 2px;
+    margin-top: 2px;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
 }
 
 .loginButton {
@@ -102,13 +119,23 @@ a:hover {
     color: #FFF;
 }
 
+#mobileNav {
+    display: none;
+    overflow: hidden;
+    border: none;
+    background-color: #A8ECF1;
+    color: navy;
+    padding: 2px 0px;
+    border-top: 2px solid navy;
+    border-bottom: 2px solid navy;
+    height: 35px;
+}
+
 /* Navy Bar*/
 
 .navyBar {
     height: 35px;
     display: flex;
-    display: -webkit-flex;
-    display: -ms-flex;
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
@@ -286,6 +313,7 @@ a:hover {
     max-width: 1200px;
     margin: 10px auto;
     border-radius: 10px;
+    text-align: center;
 }
 
 .createProfilePrompt {
@@ -423,6 +451,7 @@ a:hover {
     padding: 20px;
     margin: 0 5px;
     min-width: 300px;
+    text-align: left;
 }
 
 .tickets .innerBox {
@@ -430,6 +459,7 @@ a:hover {
     background-color: #f5f5f5;
     padding: 10px;
     height: 100%;
+    text-align: left;
 }
 
 .currentTicketsOwn.innerBox {
@@ -633,10 +663,11 @@ h5.smallTitle {
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    min-height: 90vh;
 }
 
-.aboutHero i:hover, .contactHero i:hover {
+.aboutHero i:hover,
+.contactHero i:hover {
     cursor: pointer;
 }
 
@@ -730,11 +761,11 @@ h5.smallTitle {
 
 .aboutRow {
     width: 80vw;
-    height: 350px;
+    min-height: 350px;
     border: 10px solid #FFF;
     margin: 10px;
     border-radius: 10px;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: center;
 }
@@ -770,12 +801,18 @@ h5.smallTitle {
     border-radius: 50%;
 }
 
+#aboutImgMobile {
+    display: none;
+}
+
 .aboutInfoWrap {
     min-height: 300px;
+    padding: 10px;
 }
 
 .aboutInfoWrap h4 {
     font-size: 2.5em;
+    text-align: center;
 }
 
 /* Contact */
@@ -808,10 +845,10 @@ h5.smallTitle {
     margin-right: 50px;
 }
 
-.contactForm h1, 
-.contactForm h2, 
-.contactForm h3, 
-.contactForm h4, 
+.contactForm h1,
+.contactForm h2,
+.contactForm h3,
+.contactForm h4,
 .contactForm h5 {
     line-height: 1.05em;
 }
@@ -833,6 +870,10 @@ h5.smallTitle {
     min-height: 340px;
     width: 67vw;
     font-size: 2.3em;
+}
+
+#contactMobileBr {
+    display: none;
 }
 
 .contactHero2 {
@@ -1036,7 +1077,7 @@ h5.smallTitle {
     -ms-justify-content: center;
     border-radius: 10px;
     border: 2px solid red;
-    background-color: rgba(255, 0, 0, 0.5); 
+    background-color: rgba(255, 0, 0, 0.5);
     color: #FFF;
 }
 
@@ -1098,7 +1139,7 @@ h5.smallTitle {
     margin-right: auto;
     font-size: 3em;
     font-weight: bolder;
-    -webkit-text-fill-color: rgba(2,12,126,0.0);
+    -webkit-text-fill-color: rgba(2, 12, 126, 0.0);
     -webkit-text-stroke-width: 2.5px;
     -webkit-text-stroke-color: #FFF;
 }
@@ -1174,14 +1215,51 @@ h5.smallTitle {
 
 @media only screen and (max-width: 600px) {
 
+    /* Navbar */
+    .navBar {
+        margin-bottom: -5px;
+    }
+
+    .navLogoWrapper h2 {
+        font-size: 2em;
+        margin-top: 5px;
+    }
+
+    .navLinkWrapper {
+        display: none;
+    }
+
+    .mobileNavButton {
+        display: inherit;
+    }
+
+    /* Home */
+
+    .homeSearchBar {
+        margin-top: 20px;
+    }
+
+    .subjectBulletin {
+        margin-top: -50px;
+    }
+
+    /* Profile */
+
     .profile,
     .profileBasics {
         flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .profileBasics .innerBox {
+        width: 80vw;
     }
 
     .profile .profileImage {
         width: 275px;
         height: 275px;
+        margin-right: 0px;
     }
 
     .profileBasics .innerBox {
@@ -1189,6 +1267,77 @@ h5.smallTitle {
         margin-bottom: 10px;
     }
 
+    /* Tickets */
+    .ticketColumnWrapper>div {
+        margin-top: 50px;
+    }
+
+    /* About */
+
+    .cardWrapper {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .aboutRow {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aboutImg {
+        margin-top: 5px;
+    }
+
+    .aboutImg2 {
+        display: none;
+    }
+
+    #aboutImgMobile {
+        display: initial;
+    }
+
+    /* Contact */
+    .contactWrap {
+        flex-direction: column;
+    }
+
+    .contactForm,
+    .communityInfo {
+        margin-right: 0;
+        width: 70vw;
+    }
+
+    .communityInfo {
+        margin-top: 50px;
+        font-size: 20px;
+    }
+
+    #contactMobileBr {
+        display: initial;
+    }
+
+    .faqWrapper {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+    }
+
+    .faqColumn {
+        width: 80vw;
+        margin-top: -40px;
+    }
+
+    .faqRow h4 {
+        text-align: center;
+    }
+
+    i {
+        cursor: default;
+    }
+    /* Footer */
     .footer {
         flex-direction: column;
     }
