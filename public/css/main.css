@@ -131,6 +131,7 @@ a:hover {
     height: 35px;
 }
 
+
 /* Navy Bar*/
 
 .navyBar {
@@ -166,9 +167,11 @@ a:hover {
     background-repeat: no-repeat;
 }
 
+
 /* Home page */
+
 .homeHero1 {
-    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background: url("https://img.freepik.com/free-photo/back-school-education-banner-background_8087-1192.jpg?size=626&ext=jpg&ga=GA1.2.1825122757.1601510400");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -280,9 +283,11 @@ a:hover {
     background-image: url("http://schools.stlucie.k12.fl.us/lpa/wp-content/uploads/sites/5/2014/03/IB_LearnerProfileLG.jpg");
 }
 
+
 /* Profile Page */
+
 .profileWrapper {
-    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background: url("https://img.freepik.com/free-photo/back-school-education-banner-background_8087-1192.jpg?size=626&ext=jpg&ga=GA1.2.1825122757.1601510400");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -333,7 +338,6 @@ a:hover {
     font-weight: bold;
     color: navy;
     border: 3px solid navy;
-
 }
 
 .profileForm {
@@ -393,7 +397,6 @@ a:hover {
     right: 10px;
     font-size: 14px;
 }
-
 
 .subjectsColumnContainer {
     display: flex;
@@ -597,10 +600,6 @@ a:hover {
     border-left: 3px solid #BE3A31;
 }
 
-
-
-
-
 .ticketOwner,
 .ticketStatus {
     position: relative;
@@ -653,6 +652,7 @@ h5.smallTitle {
     background-color: navy;
     color: #fff;
 }
+
 
 /* About page */
 
@@ -722,10 +722,7 @@ h5.smallTitle {
 
 .card h4 {
     font-weight: 200;
-
 }
-
-
 
 .logoBubble {
     height: 65px;
@@ -745,7 +742,7 @@ h5.smallTitle {
 }
 
 .aboutHero2 {
-    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background: url("https://img.freepik.com/free-photo/back-school-education-banner-background_8087-1192.jpg?size=626&ext=jpg&ga=GA1.2.1825122757.1601510400");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -815,9 +812,11 @@ h5.smallTitle {
     text-align: center;
 }
 
+
 /* Contact */
+
 .contactHero {
-    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background: url("https://img.freepik.com/free-photo/back-school-education-banner-background_8087-1192.jpg?size=626&ext=jpg&ga=GA1.2.1825122757.1601510400");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -917,9 +916,11 @@ h5.smallTitle {
     padding: 20px;
 }
 
+
 /* Login */
+
 .loginBackground {
-    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background: url("https://img.freepik.com/free-photo/back-school-education-banner-background_8087-1192.jpg?size=626&ext=jpg&ga=GA1.2.1825122757.1601510400");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -947,9 +948,11 @@ h5.smallTitle {
     border-radius: 5px;
 }
 
+
 /* Tickets Page */
+
 .ticketBulletin {
-    background: url("https://i.ytimg.com/vi/k3AH63hYvRI/maxresdefault.jpg");
+    background: url("https://img.freepik.com/free-photo/back-school-education-banner-background_8087-1192.jpg?size=626&ext=jpg&ga=GA1.2.1825122757.1601510400");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -1112,8 +1115,8 @@ h5.smallTitle {
 }
 
 
-
 /* Footer */
+
 .footer {
     display: flex;
     align-items: center;
@@ -1220,7 +1223,6 @@ h5.smallTitle {
 }
 
 @media only screen and (max-width: 600px) {
-
     .homeHero1,
     .profileWrapper,
     .aboutHero,
@@ -1236,17 +1238,14 @@ h5.smallTitle {
         background-size: contain;
         background-repeat: repeat-y;
     }
-
     .aboutHero {
         background-size: cover;
         background-repeat: no-repeat;
     }
-
     .loginBackground {
         background-size: cover;
         background-repeat: no-repeat;
     }
-
     .homeHero1,
     .profileWrapper,
     .aboutHero2,
@@ -1255,118 +1254,92 @@ h5.smallTitle {
     .ticketBulletin {
         background-image: url("https://i.pinimg.com/originals/a0/e4/ff/a0e4ffd97de87d07f3ed020e07aae0bb.jpg");
     }
-
     .aboutHero {
         background-image: url("https://i.imgur.com/FNEvHA4.jpg");
     }
-
     .contactHero2 {
         background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3110545.jpg");
     }
-
     .navLogoWrapper h2 {
         font-size: 2em;
         margin-top: 5px;
     }
-
     .navLinkWrapper {
         display: none;
     }
-
     .mobileNavButton {
         display: inherit;
     }
-
     /* Home */
-
     .homeSearchBar {
         margin-top: 20px;
     }
-
     .subjectBulletin {
         margin-top: -50px;
     }
-
     /* Profile */
-
     .profile,
     .profileBasics {
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
     }
-
     .profileBasics .innerBox {
         width: 80vw;
     }
-
     .profile .profileImage {
         width: 275px;
         height: 275px;
         margin-right: 0px;
     }
-
     .profileBasics .innerBox {
         min-width: 100px;
         margin-bottom: 10px;
     }
-
     /* Tickets */
     .ticketColumnWrapper>div {
         margin-top: 50px;
     }
-
     /* About */
-
     .cardWrapper {
         flex-direction: column;
         margin-top: 50px;
     }
-
     .aboutRow {
         flex-direction: column;
         text-align: center;
     }
-
     .aboutImg {
         margin-top: 5px;
     }
-
     .aboutImg2 {
         display: none;
     }
-
     #aboutImgMobile {
         display: initial;
     }
-
     /* Contact */
     .contactWrap {
         flex-direction: column;
     }
-
     .contactForm,
     .communityInfo {
         margin-right: 0;
         width: 70vw;
     }
-
     .communityInfo {
         margin-top: 50px;
         font-size: 20px;
     }
-
     #contactMobileBr {
         display: initial;
     }
-
     .contactHero2 h2 {
-        background-color: rgba(0,0,0,0.9);
+        background-color: rgba(0, 0, 0, 0.9);
         margin-top: 20px;
         width: 100vw;
         text-align: center;
     }
-
     .faqWrapper {
         width: 100vw;
         display: flex;
@@ -1375,38 +1348,32 @@ h5.smallTitle {
         align-items: center;
         padding: 50px;
     }
-
-
     .faqColumn {
         width: 80vw;
         margin-top: -40px;
     }
-
     .faqRow {
-        background-color: rgba(255,255,255,0.95);
+        background-color: rgba(255, 255, 255, 0.95);
     }
-
     .faqRow h4 {
         text-align: center;
     }
-
     i {
         cursor: default;
     }
-
     /* Footer */
     .footer {
         flex-direction: column;
     }
-
     .secretDiv {
         width: 60vh;
         height: 50vh;
     }
-
     .secretDiv h1 {
         font-size: 30px;
-        margin-top: -20px; 
+        margin-top: -20px;
     }
 }
+
+
 }
